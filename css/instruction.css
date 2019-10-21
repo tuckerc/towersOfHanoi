@@ -1,0 +1,40 @@
+/* styling de instruction's page */
+#h1Instruction{
+    text-align: center;
+    text-decoration-line: underline;
+    font-weight: bolder;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  #h2Instruction{
+    text-align: center;
+    text-decoration-line: underline;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  #pInstruction{
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      position: relative;
+  }
+  h4{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-decoration-line: underline;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: capitalize
+  }
+  ul li {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    position: relative;
+  }
+ 
