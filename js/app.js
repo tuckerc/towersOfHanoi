@@ -21,7 +21,7 @@ function Pole(id){
             return false;
         }
     }
-    this.move = function () {
+    this.move = function(){
         if (fromPole === null){
             fromPole = this.id;
         } else if(this.isSmaller()) {
@@ -34,9 +34,9 @@ function Pole(id){
   // instantiate a new pole1
 var pole0 = new Pole(0);
 //populate the pole with 3 donuts at the beginning of page.
-pole1.donuts.push(new Donut(1))
-pole1.donuts.push(new Donut(2))
-pole1.donuts.push(new Donut(3))
+pole0.donuts.push(new Donut(3));
+pole0.donuts.push(new Donut(2));
+pole0.donuts.push(new Donut(1));
 
  // instantiate a new poles 2 and 3/
 var pole1 = new Pole(1);
