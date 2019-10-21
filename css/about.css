@@ -2,6 +2,16 @@ h1{
   text-align: center;
 }
 
-.meetTheTeamInfo{
+h2{
+  padding: 15px;
+  text-align: center;
+}
+
+.image_container{
   display: inline-block;
+}
+
+table {
+  border: 2px solid black;
+  border-collapse: separate;
 }
