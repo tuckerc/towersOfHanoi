@@ -1,28 +1,83 @@
-<html lang="en">
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Towers Of Hanoi</title>  
-      <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
-  </head>
-  <body> 
-    <div class="header">
-      <div style="flex: 16;">
-        <a class="logo">Your Logo</a>
-      </div>
-      <div class="header-right"  style="flex: 20;">
-        <a  href="index.html">Index</a>
-        <a  href="about.html">About</a>
-        <a class="active" href="instructions.html">Instructions</a>
-      </div>
-      <div style="flex: 4;">
-        <a class="logo">Your Logo</a>
-      </div>
-    </div>      
-    <div style="padding-left:20px">
-      <h1>TEST DATA</h1>
-    </div>
-    <script src='js/app.js'></script>
-  </body>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Towers of Hanoi </title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/instruction.css">
+</head>
+
+<body id="pBody">
+  <header>
+    <nav> </nav>
+  </header>
+  <main>
+    <h1 id="h1Instruction">Instructions</h1>
+    <p id="pInstruction">The Tower of Hanoi (also called the Tower of Brahma or Lucas' Tower and sometimes pluralized as Towers) is a
+      mathematical game or puzzle.  It consists of three rods and a number of disks of different sizes, which can slide
+      onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest
+      at the top, thus making a conical shape. </p>
+
+     <p id="pInstruction">The objective of the puzzle is to move the entire stack to another rod, obeying the following simple rules: 
+      Only one disk can be moved at a time.
+      Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an
+      empty rod. 
+     No larger disk may be placed on top of a smaller disk. 
+      With 3 disks, the puzzle can be solved in 7 moves. The minimal number of moves required to solve a Tower of Hanoi
+      puzzle is 2n − 1, where n is the number of disks </p>
+      <p id="pInstruction">A simple solution for the toy puzzle is to alternate moves between the smallest piece and a non-smallest piece. 
+      When moving the smallest piece, always move it to the next position in the same direction (to the right if the 
+      starting number of pieces is even, to the left if the starting number of pieces is odd). If there is no tower 
+      position in the chosen direction, move the piece to the opposite end, but then continue to move in the correct 
+      direction. For example, if you started with three pieces, you would move the smallest piece to the opposite end,
+      then continue in the left direction after that. When the turn is to move the non-smallest piece, there is only one 
+      legal move. Doing this will complete the puzzle in the fewest moves. </p> 
+    
+    <h2 id="h2Instruction">Simpler statement of iterative solution</h2>
+    <h4>For an even number of disks: </h4>
+
+    <p id="pInstruction">  
+     <ul>
+         <li> make the legal move between pegs A and B (in either direction),</li>
+        <li> make the legal move between pegs A and C (in either direction),</li>
+        <li>make the legal move between pegs B and C (in either direction), </li>
+        <li>repeat until complete.</li> 
+      </ul>
+  
+    <h4> For an odd number of disks:</h4>
+    
+      <ul> 
+        <li>make the legal move between pegs A and C (in either direction),</li>
+       <li> make the legal move between pegs A and B (in either direction),</li> 
+       <li> make the legal move between pegs B and C (in either direction),</li> 
+       <li>repeat until complete.</li> 
+      </ul>
+    </p>
+     <p id="pInstruction"> In each case, a total of 2n − 1 moves are made.</p>
+    <h2 id="h2Instruction">Equivalent iterative solution</h2>
+    <p id="pInstruction">Another way to generate the unique optimal iterative solution: 
+      <ul>
+        <li> Number the disks 1 through n (largest to smallest).</li> 
+        <li> Number the disks 1 through n (largest to smallest).</li>  
+        <li> If n is odd, the first move is from peg A to peg </li>
+        <li>If n is even, the first move is from peg A to peg </li>
+      
+        <li>Now, add these constraints: </li> 
+
+        <li> No odd disk may be placed directly on an odd disk.</li>  
+        <li>  No even disk may be placed directly on an even disk. </li>
+        <li>here will sometimes be two possible pegs: one will have disks,  and the other will be empty. Place the disk on the
+            non-empty peg.</li>  
+        <li> Never move a disk twice in succession. </li>
+    </ul>
+    </p>
+      
+    <p id="pInstruction"> Considering those constraints after the first move, there is only one legal move at every subsequent turn. 
+
+      The sequence of these unique moves is an optimal solution to the problem equivalent to the iterative solution 
+      described above</p>
+  </main>
+</body>
+
 </html>
