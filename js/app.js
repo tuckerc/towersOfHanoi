@@ -13,13 +13,15 @@ function Pole(id){
   this.donuts =[];
   // comparison function to determine if legal move
   this.isSmaller = function (){
-    if(this.donuts.length === 0){
-      return true;
-    } else if (poles[fromPole].donuts.length === 0){
+    if (poles[fromPole].donuts.length === 0){
       fromPole = null;
       alert('no donouts to move');
       return false;
-    } else if (this.donuts[this.donuts.length-1].size > poles[fromPole].donuts[poles[fromPole].donuts.length-1].size) {
+    }
+    else if(this.donuts.length === 0){
+      return true;
+    }
+    else if (this.donuts[this.donuts.length-1].size > poles[fromPole].donuts[poles[fromPole].donuts.length-1].size) {
       return true;
     } else {
       fromPole = null;
@@ -60,6 +62,18 @@ function winnerWinner() {
   alert(`Congratulations! You completed Towers Of Hanoi level ${poles.length} in ${moves} moves!`);
 }
 
+function reset() {
+  for (var i = 0; i < poles.length; i++) {
+    poles[i].donuts = [];
+  }
+  pole0.donuts.push(new Donut(3));
+  pole0.donuts.push(new Donut(2));
+  pole0.donuts.push(new Donut(1));
+  moves = 0;
+  fromPole = null;
+  render();
+}
+
 function render() {
   document.getElementById('moves').textContent = `Moves: ${moves}`;
   isAWinner();
@@ -84,5 +98,6 @@ var poles = [pole0,pole1,pole2];
 document.getElementById('post1').addEventListener('click', poles[0].move);
 document.getElementById('post2').addEventListener('click', poles[1].move);
 document.getElementById('post3').addEventListener('click', poles[2].move);
+document.getElementById('reset-btn').addEventListener('click', reset);
 
 render();
