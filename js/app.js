@@ -42,8 +42,7 @@ function Pole(id){
       render();
     }
     else if(poles[poleNumber].isSmaller()) {
-      poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
-      poles[fromPole].donuts.pop();
+       poles[fromPole].donuts.pop();
       fromPole = null;
       moves++;
       render();
