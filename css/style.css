@@ -177,3 +177,36 @@ div {
   text-align:center;
 }
 
+.donutThree{
+  background-color:red;
+  position: absolute;
+  bottom:0;
+  right:-6em;
+  width:15em;
+  height:3em;
+  border-radius: 50%;
+  line-height:4em;
+
+}
+.donutTwo{
+  background-color:purple;
+  position: absolute;
+  bottom:2.2em;
+  right:-3.9em;
+  width:11em;
+  height:2.8em;
+  border-radius: 50%;
+  line-height:4em;
+}
+
+.donutOne {
+  background-color: rgb(13, 82, 30);
+  position: absolute;
+  bottom:4.4em;
+  right:-2.6em;
+  width:8em;
+  height:2.5em;
+  border-radius: 50%;
+  line-height:2em;
+}
+

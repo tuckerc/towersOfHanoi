@@ -107,3 +107,21 @@ document.getElementById('instructions').addEventListener('click', function() {
 });
 
 render();
+
+var post1El = document.getElementById('post1');
+
+var donutThree = document.createElement('div')
+donutThree.classList.add('donutThree');
+donutThree.textContent = "BIG";
+post1El.appendChild(donutThree);
+
+var donutTwo = document.createElement('div')
+donutTwo.classList.add('donutTwo');
+donutTwo.textContent = "MEDIUM";
+post1El.appendChild(donutTwo);
+
+var donutOne = document.createElement('div')
+donutOne.classList.add('donutOne');
+donutOne.textContent = "SMALL";
+post1El.appendChild(donutOne);
+
