@@ -182,7 +182,6 @@ div {
 .donutThree{
   background-color:red;
   position: absolute;
-  bottom:0;
   right:-6em;
   width:15em;
   height:3em;
@@ -193,7 +192,6 @@ div {
 .donutTwo{
   background-color:purple;
   position: absolute;
-  bottom:2.2em;
   right:-3.9em;
   width:11em;
   height:2.8em;
@@ -204,7 +202,6 @@ div {
 .donutOne {
   background-color: rgb(13, 82, 30);
   position: absolute;
-  bottom:4.4em;
   right:-2.6em;
   width:8em;
   height:2.5em;
@@ -212,3 +209,44 @@ div {
   line-height:2em;
 }
 
+#post1 div:nth-child(1){
+  position: absolute;
+  bottom: 0em;
+}
+
+#post1 div:nth-child(2){
+    position: absolute;
+    bottom:2.2em;
+}
+#post1 div:nth-child(3){
+  position: absolute;
+  bottom:4.4em;
+}
+  
+#post2 div:nth-child(1){
+  position: absolute;
+  bottom: 0em;
+}
+
+#post2 div:nth-child(2){
+    position: absolute;
+    bottom:2.2em;
+}
+#post2 div:nth-child(3){
+  position: absolute;
+  bottom:4.4em;
+}
+
+#post3 div:nth-child(1){
+  position: absolute;
+  bottom: 0em;
+}
+
+#post3 div:nth-child(2){
+    position: absolute;
+    bottom:2.2em;
+}
+#post3 div:nth-child(3){
+  position: absolute;
+  bottom:4.4em;
+}
