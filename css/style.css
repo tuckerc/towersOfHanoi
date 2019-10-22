@@ -7,7 +7,8 @@ body{
   margin: 1em auto;
   display: inline-block;
   width: 90%;
-  height: 50em;
+  height: auto;
+  overflow: hidden;
   border-top-right-radius: 70px;
   border-top-left-radius: 70px;
 }
@@ -69,11 +70,14 @@ header a {
 
 main{
   background-color:#d9eeec;
-  margin: 1em auto;
-  margin-top: 1em;  
+  margin: 1.5em auto;
+  margin-bottom: 3em;
+  padding-bottom: 1em;  
   width:62em;
   height: 34em;
   position: relative;
+  height: auto;
+  overflow: hidden;
 }
 
 #moves {
