@@ -1,7 +1,5 @@
 // new variable to store chosen pole's id
 var fromPole = null;
-// counter for moves
-var moves = 0;
 
 //constructor function for donuts
 function Donut(size){
@@ -14,42 +12,28 @@ function Pole(id){
   this.isSmaller = function (){
     if(this.donuts.length === 0){
       return true;
-    } else if (poles[fromPole].donuts.length === 0){
-      fromPole = null;
-      alert('no donouts to move');
+    } else if (this.pole[fromPole].donuts.length === 0){
       return false;
     } else if (this.donuts[this.donuts.length-1].size > poles[fromPole].donuts[poles[fromPole].donuts.length-1].size) {
       return true;
     } else {
-      fromPole = null;
-      alert('you can\'t stack a big donut on a smaller donut');
       return false;
     }
   };
   this.move = function () {
-    
-    var poleNumber = Number(this.id[this.id.length - 1] - 1);
     if (fromPole === null){
-      fromPole = poleNumber;
+      fromPole = this.id;
       //!!!!!!!!!!!!!!!!!!!!!
-      //remove later !!!!!!!!pole1
+      //remove later !!!!!!!!
       //!!!!!!!!!!!!!!!!!!!!!
       render();
     }
-    else if(poles[poleNumber].isSmaller()) {
-      poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
+    else if(this.isSmaller()) {
+      this.donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
       poles[fromPole].donuts.pop();
-      fromPole = null;
-      moves++;
       render();
     }
   };
-}
-
-function render() {
-  console.log(poles);
-  console.log(fromPole);
-  console.log(moves);
 }
 
 // instantiate a new pole1
@@ -65,8 +49,12 @@ var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
 
 // add pole event listeners
-document.getElementById('post1').addEventListener('click', poles[0].move);
-document.getElementById('post2').addEventListener('click', poles[1].move);
-document.getElementById('post3').addEventListener('click', poles[2].move);
+
+
+
+function render() {
+  console.log(poles);
+  console.log(fromPole);
+}
 
 render();
