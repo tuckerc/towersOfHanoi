@@ -44,16 +44,17 @@ function Pole(id){
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
-      var parentEl = document.getElementById('post'+ poles[poleNumber].id)
-      var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0]
-      console.log('child','donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)
-      console.log('parent','post'+ poles[poleNumber].id)
+      var parentEl = document.getElementById('post'+ poles[poleNumber].id);
+      var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0];
+      console.log('child','donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size);
+      console.log('parent','post'+ poles[poleNumber].id);
+      moves++;
       parentEl.appendChild(child);
       poles[fromPole].donuts.pop();
       fromPole = null;
-      moves++;
       render();
     }
+    isAWinner();
   };
 }
 
@@ -83,10 +84,6 @@ function reset() {
 
 function render() {
   document.getElementById('moves').textContent = `Moves: ${moves}`;
-  isAWinner();
-  console.log('poles: line 86 ',poles);
-  console.log('fromPole: line 87 ',fromPole);
-  console.log('moves: line 88 ',moves);
 }
 
 // instantiate a new pole1
