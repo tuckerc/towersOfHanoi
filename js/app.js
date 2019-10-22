@@ -56,7 +56,6 @@ function Pole(id){
     }
   };
 }
-
 // checks to see if we have a winner
 function isAWinner() {
   if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
@@ -124,7 +123,7 @@ render();
 
 var post0El = document.getElementById('post0');
 
-var donut3 = document.createElement('div')
+var donut3 = document.createElement('div');
 donut3.classList.add('donut3');
 post0El.appendChild(donut3);
 
@@ -132,7 +131,7 @@ var donut2 = document.createElement('div')
 donut2.classList.add('donut2');
 post0El.appendChild(donut2);
 
-var donut1 = document.createElement('div')
+var donut1 = document.createElement('div');
 donut1.classList.add('donut1');
 post0El.appendChild(donut1);
 
