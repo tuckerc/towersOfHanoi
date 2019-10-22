@@ -44,22 +44,46 @@ function Pole(id){
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
-      var parentEl = document.getElementById('post'+ poles[poleNumber].id)
-      var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0]
-      console.log('child','donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)
-      console.log('parent','post'+ poles[poleNumber].id)
+      var parentEl = document.getElementById('post'+ poles[poleNumber].id);
+      var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0];
+      console.log('child','donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size);
+      console.log('parent','post'+ poles[poleNumber].id);
+      moves++;
       parentEl.appendChild(child);
       poles[fromPole].donuts.pop();
       fromPole = null;
-      moves++;
       render();
     }
   };
 }
+
+// empty leaderboard
+function LeaderBoard() {
+  this.board = [];
+  this.displayBoard = function() {
+
+  };
+  this.getName = function() {
+    return prompt('What is your name?');
+  };
+  this.addLeader = function() {
+    var userName = this.getName();
+    this.board.push(new Leader(userName, moves));
+    console.log(this);
+  };
+}
+
+function Leader(name, moves) {
+  this.name = name;
+  this.moves = moves;
+}
+
+
 // checks to see if we have a winner
 function isAWinner() {
   if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
     winnerWinner();
+    leaders.addLeader();
   }
 }
 
@@ -137,3 +161,4 @@ var donut1 = document.createElement('div');
 donut1.classList.add('donut1');
 post0El.appendChild(donut1);
 
+var leaders = new LeaderBoard();
