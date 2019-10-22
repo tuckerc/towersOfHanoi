@@ -180,7 +180,7 @@ div {
 .donutThree{
   background-color:red;
   position: absolute;
-  bottom:0;
+  /* bottom:0; */
   right:-6em;
   width:15em;
   height:3em;
@@ -191,7 +191,7 @@ div {
 .donutTwo{
   background-color:purple;
   position: absolute;
-  bottom:2.2em;
+  /* bottom:2.2em; */
   right:-3.9em;
   width:11em;
   height:2.8em;
@@ -202,7 +202,7 @@ div {
 .donutOne {
   background-color: rgb(13, 82, 30);
   position: absolute;
-  bottom:4.4em;
+  /* bottom:4.4em; */
   right:-2.6em;
   width:8em;
   height:2.5em;
