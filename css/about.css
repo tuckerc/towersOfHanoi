@@ -1,7 +1,3 @@
-h1{
-  text-align: center;
-}
-
 h2{
   padding: 15px;
   text-align: center;
@@ -28,5 +24,47 @@ h2{
 #topLogo {
   background-color: lightslategray;
   border: 3px white;
+  width: 70vw;
+  height: 10vw;
+  text-align: left;
+  padding-top: 50px; 
+  padding-left: 10vw;
+  font-weight: bold;
+  font-size: 80px;
+justify-content: center;
+}
 
+hr {
+  color: red;
+  border-color: red;
+  text-emphasis-color: red;
+}
+
+#moveMent{
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  position: relative;
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 10s;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-direction: alternate;
+
+}
+
+@-webkit-keyframes example {
+  0%   {background-color:brown; left:0px; top:0px;}
+  25%  {background-color:brown; left:0px; top:0px;}
+  50%  {background-color:brown; left:0px; top:0px;}
+  75%  {background-color:brown; left:0px; top:0px;}
+  100% {background-color:brown; left:0px; top:0px;}
+}
+
+@keyframes example {
+  0%   {background-color:brown; left:0px; top:0px;}
+  25%  {background-color:brown; left:400px; top:0px;}
+  50%  {background-color:brown; left:400px; top:200px;}
+  75%  {background-color:brown; left:0px; top:200px;}
+  100% {background-color:brown; left:0px; top:0px;}
 }
