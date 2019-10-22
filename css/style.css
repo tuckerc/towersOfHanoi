@@ -40,7 +40,7 @@ header img {
   vertical-align: 50%;
 }
 
-#nav div {
+#nav div, #reset-btn {
   padding: 0.4em;
   margin: 0.25em;
   font-family: 'Boogaloo', cursive;
@@ -51,7 +51,7 @@ header img {
   border: 0.2em solid #3c70a4;
 }
 
-#nav div:hover {
+#nav div:hover, #reset-btn:hover {
   background-color: #3c70a4;
   border: 0.2em solid #da9833;
   cursor: pointer;
@@ -95,28 +95,12 @@ main{
 }
 
 #reset-btn {
-  color: #21647a !important;
-  width:100px;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #ffffff;
-  padding: 20px;
-  border: 4px solid #cfe7e5 !important;
+  width:auto;
   display: inline-block;
-  transition: all 0.09s ease 0s;
   position: absolute;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
   right:0;
-
   }
-
-#reset-btn:hover {
-  color: #ffffff !important;
-  background: #f6b93b;
-  border-color: #f6b93b !important;
-  transition: all 0.09s ease 0s;
-}
   
 .towers{
   border-top-right-radius: 20px;

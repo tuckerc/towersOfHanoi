@@ -40,7 +40,7 @@ function Pole(id){
       //!!!!!!!!!!!!!!!!!!!!!
       //remove later !!!!!!!!pole1
       //!!!!!!!!!!!!!!!!!!!!!
-      render();
+      // render();
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
@@ -77,15 +77,16 @@ function reset() {
   pole0.donuts.push(new Donut(1));
   moves = 0;
   fromPole = null;
+// write the code for 3 different children and 3 different parent.
+post0El.appendChild(donut3);
+post0El.appendChild(donut2);
+post0El.appendChild(donut1);
   render();
 }
 
 function render() {
   document.getElementById('moves').textContent = `Moves: ${moves}`;
   isAWinner();
-  console.log('poles: line 86 ',poles);
-  console.log('fromPole: line 87 ',fromPole);
-  console.log('moves: line 88 ',moves);
 }
 
 // instantiate a new pole1
@@ -101,6 +102,7 @@ var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
 
 // add pole event listeners
+
 document.getElementById('post0').addEventListener('click', poles[0].move);
 document.getElementById('post1').addEventListener('click', poles[1].move);
 document.getElementById('post2').addEventListener('click', poles[2].move);
