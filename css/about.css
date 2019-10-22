@@ -71,3 +71,6 @@ hr {
   75%  {background-color:brown; left:0px; top:200px;}
   100% {background-color:brown; left:0px; top:0px;}
 }
+main{
+  height: auto;
+}

@@ -8,6 +8,7 @@ body{
   display: inline-block;
   width: 90%;
   height: auto;
+  min-height: 10em;
   overflow: hidden;
   border-top-right-radius: 70px;
   border-top-left-radius: 70px;
@@ -74,10 +75,11 @@ main{
   margin-bottom: 3em;
   padding-bottom: 1em;  
   width:62em;
-  height: 34em;
+  height: 28em;
   position: relative;
-  height: auto;
+  /* height: auto; */
   overflow: hidden;
+  
 }
 
 #moves {
