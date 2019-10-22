@@ -126,7 +126,7 @@ div {
   display:inline-block;
 }
 
-#post1{
+#post0{
   background-color:#da9833;
   width:50px;
   height:350px;
@@ -137,7 +137,7 @@ div {
   left:90px;
 }
 
-#post2 {
+#post1 {
   background-color:#da9833;
   width:50px;
   height:350px;
@@ -149,7 +149,7 @@ div {
 }
 
 
-  #post3 {
+  #post2 {
   background-color:#da9833;
   width:50px;
   height:350px;
@@ -179,10 +179,9 @@ div {
   text-align:center;
 }
 
-.donutThree{
+.donut3{
   background-color:red;
   position: absolute;
-  /* bottom:0; */
   right:-6em;
   width:15em;
   height:3em;
@@ -190,10 +189,9 @@ div {
   line-height:4em;
 
 }
-.donutTwo{
+.donut2{
   background-color:purple;
   position: absolute;
-  /* bottom:2.2em; */
   right:-3.9em;
   width:11em;
   height:2.8em;
@@ -201,14 +199,61 @@ div {
   line-height:4em;
 }
 
-.donutOne {
+.donut1 {
   background-color: rgb(13, 82, 30);
   position: absolute;
-  /* bottom:4.4em; */
   right:-2.6em;
   width:8em;
   height:2.5em;
   border-radius: 50%;
   line-height:2em;
 }
+
+#post0 div:nth-child(1){
+  position: absolute;
+  bottom: 0em;
+}
+
+#post0 div:nth-child(2){
+    position: absolute;
+    bottom:2.2em;
+}
+#post0 div:nth-child(3){
+  position: absolute;
+  bottom:4.4em;
+}
+  
+#post1 div:nth-child(1){
+  position: absolute;
+  bottom: 0em;
+}
+
+#post1 div:nth-child(2){
+    position: absolute;
+    bottom:2.2em;
+}
+#post1 div:nth-child(3){
+  position: absolute;
+  bottom:4.4em;
+}
+
+#post2 div:nth-child(1){
+  position: absolute;
+  bottom: 0em;
+}
+
+#post2 div:nth-child(2){
+    position: absolute;
+    bottom:2.2em;
+}
+#post2 div:nth-child(3){
+  position: absolute;
+  bottom:4.4em;
+}
+  
+  
+  
+  
+  
+
 

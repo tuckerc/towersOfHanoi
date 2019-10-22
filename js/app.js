@@ -33,9 +33,10 @@ function Pole(id){
   // function to handle donut moves
   this.move = function () {
     
-    var poleNumber = Number(this.id[this.id.length - 1] - 1);
+    var poleNumber = Number(this.id[this.id.length - 1]);
     if (fromPole === null){
       fromPole = poleNumber;
+      console.log('poleNumber', poleNumber)
       //!!!!!!!!!!!!!!!!!!!!!
       //remove later !!!!!!!!pole1
       //!!!!!!!!!!!!!!!!!!!!!
@@ -43,6 +44,11 @@ function Pole(id){
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
+      var parentEl = document.getElementById('post'+ poles[poleNumber].id)
+      var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0]
+      console.log('child','donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)
+      console.log('parent','post'+ poles[poleNumber].id)
+      parentEl.appendChild(child);
       poles[fromPole].donuts.pop();
       fromPole = null;
       moves++;
@@ -78,9 +84,9 @@ function reset() {
 function render() {
   document.getElementById('moves').textContent = `Moves: ${moves}`;
   isAWinner();
-  console.log(poles);
-  console.log(fromPole);
-  console.log(moves);
+  console.log('poles: line 86 ',poles);
+  console.log('fromPole: line 87 ',fromPole);
+  console.log('moves: line 88 ',moves);
 }
 
 // instantiate a new pole1
@@ -96,9 +102,9 @@ var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
 
 // add pole event listeners
-document.getElementById('post1').addEventListener('click', poles[0].move);
-document.getElementById('post2').addEventListener('click', poles[1].move);
-document.getElementById('post3').addEventListener('click', poles[2].move);
+document.getElementById('post0').addEventListener('click', poles[0].move);
+document.getElementById('post1').addEventListener('click', poles[1].move);
+document.getElementById('post2').addEventListener('click', poles[2].move);
 document.getElementById('reset-btn').addEventListener('click', reset);
 document.getElementById('about').addEventListener('click', function() {
   document.location.assign('about.html');
@@ -109,20 +115,24 @@ document.getElementById('instructions').addEventListener('click', function() {
 
 render();
 
-var post1El = document.getElementById('post1');
+// function render(){
+//   for (var i = 0 ; i < poles[0].donuts.length; i++){
+//     var child = document.createElement
+//     document.getElementById('post1').appendChild()
+//   }
+// }
 
-var donutThree = document.createElement('div')
-donutThree.classList.add('donutThree');
-donutThree.textContent = "BIG";
-post1El.appendChild(donutThree);
+var post0El = document.getElementById('post0');
 
-var donutTwo = document.createElement('div')
-donutTwo.classList.add('donutTwo');
-donutTwo.textContent = "MEDIUM";
-post1El.appendChild(donutTwo);
+var donut3 = document.createElement('div')
+donut3.classList.add('donut3');
+post0El.appendChild(donut3);
 
-var donutOne = document.createElement('div')
-donutOne.classList.add('donutOne');
-donutOne.textContent = "SMALL";
-post1El.appendChild(donutOne);
+var donut2 = document.createElement('div')
+donut2.classList.add('donut2');
+post0El.appendChild(donut2);
+
+var donut1 = document.createElement('div')
+donut1.classList.add('donut1');
+post0El.appendChild(donut1);
 
