@@ -54,7 +54,6 @@ function Pole(id){
       fromPole = null;
       render();
     }
-    isAWinner();
   };
 }
 
