@@ -120,4 +120,4 @@ document.getElementById('instructions').addEventListener('click', function() {
   document.location.assign('instructions.html');
 });
 
-render();
+render(); 
