@@ -40,7 +40,7 @@ function Pole(id){
       //!!!!!!!!!!!!!!!!!!!!!
       //remove later !!!!!!!!pole1
       //!!!!!!!!!!!!!!!!!!!!!
-      render();
+      // render();
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
