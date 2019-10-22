@@ -2,7 +2,7 @@
 var fromPole = null;
 // counter for moves
 var moves = 0;
-
+​
 //constructor function for donuts
 function Donut(size){
   this.size = size;
@@ -49,19 +49,19 @@ function Pole(id){
     }
   };
 }
-
+​
 // checks to see if we have a winner
 function isAWinner() {
   if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
     winnerWinner();
   }
 }
-
+​
 // this is where we putt our animation for the winner
 function winnerWinner() {
   alert(`Congratulations! You completed Towers Of Hanoi level ${poles.length} in ${moves} moves!`);
 }
-
+​
 function reset() {
   for (var i = 0; i < poles.length; i++) {
     poles[i].donuts = [];
@@ -73,7 +73,7 @@ function reset() {
   fromPole = null;
   render();
 }
-
+​
 function render() {
   document.getElementById('moves').textContent = `Moves: ${moves}`;
   isAWinner();
@@ -81,19 +81,19 @@ function render() {
   console.log(fromPole);
   console.log(moves);
 }
-
+​
 // instantiate a new pole1
 var pole0 = new Pole(0);
 //populate the pole with 3 donuts at the beginning of page.
 pole0.donuts.push(new Donut(3));
 pole0.donuts.push(new Donut(2));
 pole0.donuts.push(new Donut(1));
-
+​
 // instantiate a new poles 2 and 3/
 var pole1 = new Pole(1);
 var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
-
+​
 // add pole event listeners
 document.getElementById('post1').addEventListener('click', poles[0].move);
 document.getElementById('post2').addEventListener('click', poles[1].move);
@@ -105,5 +105,5 @@ document.getElementById('about').addEventListener('click', function() {
 document.getElementById('instructions').addEventListener('click', function() {
   document.location.assign('instructions.html');
 });
-
+​
 render();
