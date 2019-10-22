@@ -28,13 +28,6 @@ function Pole(id){
       alert('you can\'t stack a big donut on a smaller donut');
       return false;
     }
-    this.move = function(){
-        if (fromPole === null){
-            fromPole = this.id;
-        } else if(this.isSmaller()) {
-            this.donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
-            poles[fromPole].donuts.pop();
-        }   
   };
   // function to handle donut moves
   this.move = function () {
@@ -102,13 +95,6 @@ var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
 
 // add pole event listeners
-
-
-
-function render(){
-  console.log(poles);
-  console.log(fromPole);
-}
 document.getElementById('post1').addEventListener('click', poles[0].move);
 document.getElementById('post2').addEventListener('click', poles[1].move);
 document.getElementById('post3').addEventListener('click', poles[2].move);
@@ -120,4 +106,4 @@ document.getElementById('instructions').addEventListener('click', function() {
   document.location.assign('instructions.html');
 });
 
-render(); 
+render();
