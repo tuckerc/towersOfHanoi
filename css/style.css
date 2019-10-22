@@ -14,7 +14,7 @@ body{
 main{
     background-color:#d9eeec;
     margin: auto 10%;
-    margin-top:4em;  
+    margin-top: 1em;  
     width:62em;
     height: 34em;
     position: relative;
@@ -23,14 +23,20 @@ main{
 
 header h1 {
   text-align: center;
-  padding: 0.5em;
+  padding: 0.25em;
   font-family: 'Boogaloo', cursive;
-  font-size: 3em;
+  font-size: 4em;
+  background-color: #da9833;
+  color: #d9eeec;
+  margin-top: 0.25em;
+  border-radius: 50%;
+  border: 0.2em solid #3c70a4;
 }
 
 header img {
   width: 4em;
   text-align: center;
+  margin-bottom: 2em;
 }
 
 #nav {
@@ -39,6 +45,23 @@ header img {
   width: 49%;
   text-align: center;
   vertical-align: 50%;
+}
+
+#nav div {
+  padding: 0.4em;
+  margin: 0.25em;
+  font-family: 'Boogaloo', cursive;
+  font-size: 2em;
+  background-color: #da9833;
+  color: #d9eeec;
+  border-radius: 50%;
+  border: 0.2em solid #3c70a4;
+}
+
+#nav div:hover {
+  background-color: #3c70a4;
+  border: 0.2em solid #da9833;
+  cursor: pointer;
 }
 
 header a {

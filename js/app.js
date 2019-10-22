@@ -99,5 +99,11 @@ document.getElementById('post1').addEventListener('click', poles[0].move);
 document.getElementById('post2').addEventListener('click', poles[1].move);
 document.getElementById('post3').addEventListener('click', poles[2].move);
 document.getElementById('reset-btn').addEventListener('click', reset);
+document.getElementById('about').addEventListener('click', function() {
+  document.location.assign('about.html');
+});
+document.getElementById('instructions').addEventListener('click', function() {
+  document.location.assign('instructions.html');
+});
 
 render();
