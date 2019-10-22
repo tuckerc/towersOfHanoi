@@ -1,9 +1,8 @@
 h2{
   padding: 2vw;
   text-align: center;
-font: bold;
-font-size: 50px;
-
+  font: bold;
+  font-size: 2em;
 }
 
 .image_container{
@@ -25,16 +24,15 @@ font-size: 50px;
 }
 
 #topLogo {
-  background-color: lightslategray;
-  border: 3px white;
+  /* background-color: lightslategray; */
+  border: 1em white;
   width: 70vw;
-  height: 10vw;
+  height: auto;
   text-align: left;
-  padding-top: 50px; 
-  padding-left: 10vw;
   font-weight: bold;
-  font-size: 80px;
-justify-content: center;
+  font-size: 3em;
+  justify-content: center;
+  margin-bottom: 0.5em;
 }
 
 hr {
