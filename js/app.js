@@ -11,6 +11,7 @@ function Donut(size){
 function Pole(id){
   this.id = id;
   this.donuts =[];
+  // comparison function to determine if legal move
   this.isSmaller = function (){
     if(this.donuts.length === 0){
       return true;
@@ -26,6 +27,7 @@ function Pole(id){
       return false;
     }
   };
+  // function to handle donut moves
   this.move = function () {
     
     var poleNumber = Number(this.id[this.id.length - 1] - 1);
@@ -46,7 +48,21 @@ function Pole(id){
   };
 }
 
+// checks to see if we have a winner
+function isAWinner() {
+  if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
+    winnerWinner();
+  }
+}
+
+// this is where we putt our animation for the winner
+function winnerWinner() {
+  alert(`Congratulations! You completed Towers Of Hanoi level ${poles.length} in ${moves} moves!`);
+}
+
 function render() {
+  document.getElementById('moves').textContent = `Moves: ${moves}`;
+  isAWinner();
   console.log(poles);
   console.log(fromPole);
   console.log(moves);
