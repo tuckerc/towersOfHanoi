@@ -1,4 +1,9 @@
-h2{
+ *{
+   margin:0;
+   padding: 0;
+   border: 0;
+ }
+ h2{
   padding: 2vw;
   text-align: center;
   font: bold;
@@ -7,68 +12,60 @@ h2{
 
 .image_container{
   display: inline-block;
-}
-
-/* table {
-  border: 2px solid black;
-  border-collapse: separate;
-} */
-
-#ran, #el, #ch, #co {
-  border: 5px solid black;
-  padding: 25px 50px;
-  background-color: lightblue;
-  padding-left: 5px;
-  height: 250px;
-  width: 250px;
+  /* //changed width & height from 100% to auto && added position relative */
+  width: auto;
+  height: auto;
+  position: relative;
 }
 
 #topLogo {
-  /* background-color: lightslategray; */
-  border: 1em white;
   width: 70vw;
   height: auto;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   font-size: 3em;
   justify-content: center;
   margin-bottom: 0.5em;
+} 
+
+  .crew{
+  display: inline-block;
+  height: 40%;
+  width: 40%;
 }
 
-hr {
-  color: red;
-  border-color: red;
-  text-emphasis-color: red;
+.imgCrew{
+  /* //changed height & width to 50%.  It was 40% each */
+  height: 50%;
+  width: 50%;
+  display: inline-block;
+  /* //added the below info */
+  backface-visibility: hidden;
+  /* opacity: 1;
+  transition: 1s ease; */
+  position:relative;
 }
 
-#moveMent{
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  position: relative;
-  -webkit-animation-name: example;
-  -webkit-animation-duration: 10s;
-  animation-name: example;
-  animation-duration: 5s;
-  animation-direction: alternate;
-
+/* //added section  */
+.imgCrew:hover {
+  opacity: 0.3;
 }
 
-@-webkit-keyframes example {
-  0%   {background-color:brown; left:0px; top:0px;}
-  25%  {background-color:brown; left:0px; top:0px;}
-  50%  {background-color:brown; left:0px; top:0px;}
-  75%  {background-color:brown; left:0px; top:0px;}
-  100% {background-color:brown; left:0px; top:0px;}
+.pCrewInfo{
+    visibility: hidden;
+    height: 50%;
+    width: 20%;
+    /* display: inline-block; */
+    overflow-wrap: break-word;
+    position: absolute;
+    top:10vh;
+    left:14vw;
 }
 
-@keyframes example {
-  0%   {background-color:brown; left:0px; top:0px;}
-  25%  {background-color:brown; left:400px; top:0px;}
-  50%  {background-color:brown; left:400px; top:200px;}
-  75%  {background-color:brown; left:0px; top:200px;}
-  100% {background-color:brown; left:0px; top:0px;}
+.imgCrew:hover + .pCrewInfo{
+    visibility:visible;
 }
-main{
-  height: auto;
-}
+
+ main{
+  height: 100%;
+} 

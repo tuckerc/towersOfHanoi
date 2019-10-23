@@ -7,11 +7,13 @@ var alertPopup = document.getElementById('alertNoDonuts')
 function alertNoDonuts(){
   alertPopup.textContent = 'NO DONUTS TO MOVE'
   alertPopup.style.visibility = "visible";
+  slapAudio.play();
   setTimeout(function(){ alertPopup.style.visibility= "hidden" }, 2200);
 }
 function alertBigOnSmall(){
   alertPopup.textContent = "YOU CAN'T STACK BIG DONUT ON SMALLER DONUT";
   alertPopup.style.visibility = "visible";
+  slapAudio.play();
   setTimeout(function(){ alertPopup.style.visibility= "hidden" }, 2200);
 }
 
@@ -51,12 +53,14 @@ function Pole(id){
     var poleNumber = Number(this.id[this.id.length - 1]);
     if (fromPole === null){
       fromPole = poleNumber;
+      buttonAudio.play();
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
       var parentEl = document.getElementById('post'+ poles[poleNumber].id);
       var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0];
       moves++;
+      buttonOffAudio.play()
       parentEl.appendChild(child);
       poles[fromPole].donuts.pop();
       fromPole = null;
@@ -72,26 +76,19 @@ function LeaderBoard() {
 
   };
   this.getName = function() {
-    return prompt('What is your name?');
+    // return prompt('What is your name?');
+    return document.getElementById('username').value;
   };
   this.addLeader = function() {
-    var userName = this.getName();
-    this.board.push(new Leader(userName, moves));
-    this.board.sort(function(a, b) {
-      a.moves - b.moves;
+    var userName = leaders.getName();
+    leaders.board.push(new Leader(userName, moves));
+    leaders.board.sort(function(a, b) {
+      return a.moves - b.moves;
     });
-    for(var i = 0; i < leaders.board.length; i++) {
-      if(leaders.board[i].name === userName) {
-        console.log(leaders.board[i].name);
-        console.log(userName);
-        if(leaders.board[i].moves > moves) {
-          leaders.board.splice(i,1);
-        }
-      }
-    }
+
     console.log(leaders);
 
-    this.pushToLocal();
+    leaders.pushToLocal();
     console.log(localStorage.getItem('towersOfHanoi'));
   };
   this.pushToLocal = function() {
@@ -112,15 +109,13 @@ function Leader(name, moves) {
 
 // checks to see if we have a winner
 function isAWinner() {
-  if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
+  if(poles[1].donuts.length === 4 || poles[2].donuts.length === 4) {
     winnerWinner();
-    leaders.addLeader();
   }
 }
 
 // this is where we putt our animation for the winner
 function winnerWinner() {
-  // alert(`Congratulations! You completed Towers Of Hanoi level ${poles.length} in ${moves} moves!`);
   promptScoreBoard();
 }
 
@@ -128,12 +123,14 @@ function reset() {
   for (var i = 0; i < poles.length; i++) {
     poles[i].donuts = [];
   }
+  pole0.donuts.push(new Donut(4));
   pole0.donuts.push(new Donut(3));
   pole0.donuts.push(new Donut(2));
   pole0.donuts.push(new Donut(1));
   moves = 0;
   fromPole = null;
-// write the code for 3 different children and 3 different parent.
+  // write the code for 3 different children and 3 different parent.
+  post0El.appendChild(donut4);
   post0El.appendChild(donut3);
   post0El.appendChild(donut2);
   post0El.appendChild(donut1);
@@ -148,6 +145,7 @@ function render() {
 // instantiate a new pole1
 var pole0 = new Pole(0);
 //populate the pole with 3 donuts at the beginning of page.
+pole0.donuts.push(new Donut(4));
 pole0.donuts.push(new Donut(3));
 pole0.donuts.push(new Donut(2));
 pole0.donuts.push(new Donut(1));
@@ -157,8 +155,14 @@ var pole1 = new Pole(1);
 var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
 
-// add pole event listeners
+// creating sounds
+var buttonAudio = new Audio('/Users/Ran/code-fellows/201d53/towersOfHanoi/sound/button.m4a');
+var buttonOffAudio = new Audio('/Users/Ran/code-fellows/201d53/towersOfHanoi/sound/buttonoff.m4a');
+var slapAudio = new Audio('/Users/Ran/code-fellows/201d53/towersOfHanoi/sound/slap.m4a');
+slapAudio.volume = 0.35;
 
+
+// add pole event listeners
 document.getElementById('post0').addEventListener('click', poles[0].move);
 document.getElementById('post1').addEventListener('click', poles[1].move);
 document.getElementById('post2').addEventListener('click', poles[2].move);
@@ -172,14 +176,11 @@ document.getElementById('instructions').addEventListener('click', function() {
 
 render();
 
-// function render(){
-//   for (var i = 0 ; i < poles[0].donuts.length; i++){
-//     var child = document.createElement
-//     document.getElementById('post1').appendChild()
-//   }
-// }
-
 var post0El = document.getElementById('post0');
+
+var donut4 = document.createElement('div');
+donut4.classList.add('donut4');
+post0El.appendChild(donut4);
 
 var donut3 = document.createElement('div');
 donut3.classList.add('donut3');
@@ -193,6 +194,8 @@ var donut1 = document.createElement('div');
 donut1.classList.add('donut1');
 post0El.appendChild(donut1);
 
+var leaders = new LeaderBoard();
+leaders.pullFromLocal();
 
 function promptScoreBoard(){
   var scoreBoardEl = document.getElementById('scoreBoard');
@@ -201,11 +204,9 @@ function promptScoreBoard(){
   winnerEl.textContent = "WINNER WINNER CHICKEN DINNER!";
   var pEl = document.getElementById('pTag');
   pEl.textContent = `Number of Moves: ${moves}`;
+  document.getElementById('submit').addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    leaders.addLeader();
+  });
 }
-var leaders = new LeaderBoard();
-leaders.pullFromLocal();
-
-
-var leaders = new LeaderBoard();
-leaders.pullFromLocal();
-
