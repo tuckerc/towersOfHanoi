@@ -103,13 +103,6 @@ function isAWinner() {
   }
 }
 
-function timeoutAlert() {
-  setTimeout(() =>  {
-    winnerWinner() },1000); 
-  setTimeout(() =>  {
-    leaders.addLeader() },2000);
-}
-
 // this is where we putt our animation for the winner
 function winnerWinner() {
   promptScoreBoard();
