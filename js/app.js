@@ -36,6 +36,7 @@ function Pole(id){
     var poleNumber = Number(this.id[this.id.length - 1]);
     if (fromPole === null){
       fromPole = poleNumber;
+      
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
@@ -54,7 +55,7 @@ function Pole(id){
 function LeaderBoard() {
   this.board = [];
   this.displayBoard = function() {
-
+    
   };
   this.getName = function() {
     // return prompt('What is your name?');
@@ -152,6 +153,9 @@ document.getElementById('about').addEventListener('click', function() {
 });
 document.getElementById('instructions').addEventListener('click', function() {
   document.location.assign('instructions.html');
+});
+document.getElementById('leaderBoard').addEventListener('click', function() {
+  document.location.assign('leaderboard.html');
 });
 
 render();
