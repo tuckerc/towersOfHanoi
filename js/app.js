@@ -72,26 +72,27 @@ function LeaderBoard() {
 
   };
   this.getName = function() {
-    return prompt('What is your name?');
+    // return prompt('What is your name?');
+    return document.getElementById('username').value;
   };
   this.addLeader = function() {
-    var userName = this.getName();
-    this.board.push(new Leader(userName, moves));
-    this.board.sort(function(a, b) {
-      a.moves - b.moves;
+    var userName = leaders.getName();
+    leaders.board.push(new Leader(userName, moves));
+    leaders.board.sort(function(a, b) {
+      return a.moves - b.moves;
     });
-    for(var i = 0; i < leaders.board.length; i++) {
-      if(leaders.board[i].name === userName) {
-        console.log(leaders.board[i].name);
-        console.log(userName);
-        if(leaders.board[i].moves > moves) {
-          leaders.board.splice(i,1);
-        }
-      }
-    }
+    // for(var i = 0; i < leaders.board.length; i++) {
+    //   if(leaders.board[i].name === userName) {
+    //     console.log(leaders.board[i].name);
+    //     console.log(userName);
+    //     if(leaders.board[i].moves > moves) {
+    //       leaders.board.splice(i,1);
+    //     }
+    //   }
+    // }
     console.log(leaders);
 
-    this.pushToLocal();
+    leaders.pushToLocal();
     console.log(localStorage.getItem('towersOfHanoi'));
   };
   this.pushToLocal = function() {
@@ -114,13 +115,11 @@ function Leader(name, moves) {
 function isAWinner() {
   if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
     winnerWinner();
-    leaders.addLeader();
   }
 }
 
 // this is where we putt our animation for the winner
 function winnerWinner() {
-  // alert(`Congratulations! You completed Towers Of Hanoi level ${poles.length} in ${moves} moves!`);
   promptScoreBoard();
 }
 
@@ -133,7 +132,7 @@ function reset() {
   pole0.donuts.push(new Donut(1));
   moves = 0;
   fromPole = null;
-// write the code for 3 different children and 3 different parent.
+  // write the code for 3 different children and 3 different parent.
   post0El.appendChild(donut3);
   post0El.appendChild(donut2);
   post0El.appendChild(donut1);
@@ -172,13 +171,6 @@ document.getElementById('instructions').addEventListener('click', function() {
 
 render();
 
-// function render(){
-//   for (var i = 0 ; i < poles[0].donuts.length; i++){
-//     var child = document.createElement
-//     document.getElementById('post1').appendChild()
-//   }
-// }
-
 var post0El = document.getElementById('post0');
 
 var donut3 = document.createElement('div');
@@ -193,6 +185,8 @@ var donut1 = document.createElement('div');
 donut1.classList.add('donut1');
 post0El.appendChild(donut1);
 
+var leaders = new LeaderBoard();
+leaders.pullFromLocal();
 
 function promptScoreBoard(){
   var scoreBoardEl = document.getElementById('scoreBoard');
@@ -201,11 +195,9 @@ function promptScoreBoard(){
   winnerEl.textContent = "WINNER WINNER CHICKEN DINNER!";
   var pEl = document.getElementById('pTag');
   pEl.textContent = `Number of Moves: ${moves}`;
+  document.getElementById('submit').addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    leaders.addLeader();
+  });
 }
-var leaders = new LeaderBoard();
-leaders.pullFromLocal();
-
-
-var leaders = new LeaderBoard();
-leaders.pullFromLocal();
-
