@@ -105,7 +105,6 @@ function isAWinner() {
 
 // this is where we putt our animation for the winner
 function winnerWinner() {
-  // alert(`Congratulations! You completed Towers Of Hanoi level ${poles.length} in ${moves} moves!`);
   promptScoreBoard();
 }
 
