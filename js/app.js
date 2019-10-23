@@ -55,6 +55,7 @@ function Pole(id){
 function LeaderBoard() {
   this.board = [];
   this.displayBoard = function() {
+    // alert();
     
   };
   this.getName = function() {
@@ -126,7 +127,9 @@ function reset() {
 }
 
 function render() {
-  document.getElementById('moves').textContent = `Moves: ${moves}`;
+  if(document.getElementById('moves')) {
+    document.getElementById('moves').textContent = `Moves: ${moves}`;
+  }  
   isAWinner();
 }
 
@@ -144,35 +147,51 @@ var poles = [pole0,pole1,pole2];
 
 // add pole event listeners
 
-document.getElementById('post0').addEventListener('click', poles[0].move);
-document.getElementById('post1').addEventListener('click', poles[1].move);
-document.getElementById('post2').addEventListener('click', poles[2].move);
-document.getElementById('reset-btn').addEventListener('click', reset);
-document.getElementById('about').addEventListener('click', function() {
-  document.location.assign('about.html');
-});
-document.getElementById('instructions').addEventListener('click', function() {
-  document.location.assign('instructions.html');
-});
-document.getElementById('leaderBoard').addEventListener('click', function() {
-  document.location.assign('leaderboard.html');
-});
+if(document.getElementById('post0')) {
+  document.getElementById('post0').addEventListener('click', poles[0].move);
+}
+if(document.getElementById('post1')) {
+  document.getElementById('post1').addEventListener('click', poles[1].move);
+}
+if(document.getElementById('post2')) {
+  document.getElementById('post2').addEventListener('click', poles[2].move);
+}
+if(document.getElementById('reset-btn')) {
+  document.getElementById('reset-btn').addEventListener('click', reset);
+}
+if(document.getElementById('about')) {
+  document.getElementById('about').addEventListener('click', function() {
+    document.location.assign('about.html');
+  });
+}
+if(document.getElementById('instructions')) {
+  document.getElementById('instructions').addEventListener('click', function() {
+    document.location.assign('instructions.html');
+  });
+}
+if(document.getElementById('leaderBoard')) {
+  document.getElementById('leaderBoard').addEventListener('click', function() {
+    document.location.assign('leaderboard.html');
+  });
+}
 
 render();
 
-var post0El = document.getElementById('post0');
+if(document.getElementById('post0')) {
+  var post0El = document.getElementById('post0');
 
-var donut3 = document.createElement('div');
-donut3.classList.add('donut3');
-post0El.appendChild(donut3);
+  var donut3 = document.createElement('div');
+  donut3.classList.add('donut3');
+  post0El.appendChild(donut3);
 
-var donut2 = document.createElement('div')
-donut2.classList.add('donut2');
-post0El.appendChild(donut2);
+  var donut2 = document.createElement('div')
+  donut2.classList.add('donut2');
+  post0El.appendChild(donut2);
 
-var donut1 = document.createElement('div');
-donut1.classList.add('donut1');
-post0El.appendChild(donut1);
+  var donut1 = document.createElement('div');
+  donut1.classList.add('donut1');
+  post0El.appendChild(donut1);
+}
 
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();
@@ -188,5 +207,6 @@ function promptScoreBoard(){
     e.preventDefault();
     e.stopPropagation();
     leaders.addLeader();
+    document.location.assign('leaderboard.html');
   });
 }
