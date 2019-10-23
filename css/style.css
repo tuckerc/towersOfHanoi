@@ -42,13 +42,13 @@ header img {
 }
 
 #nav div, #reset-btn {
-  padding: 0.4em;
+  padding: 0.2em;
   margin: 0.25em;
   font-family: 'Boogaloo', cursive;
-  font-size: 5vh;
+  font-size: 4vh;
   background-color: #da9833;
   color: #d9eeec;
-  border-radius: 50%;
+  border-radius: 30%;
   border: 0.2em solid #3c70a4;
 }
 
