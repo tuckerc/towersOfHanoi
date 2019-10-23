@@ -61,17 +61,22 @@ function LeaderBoard() {
   };
   this.addLeader = function() {
     var userName = this.getName();
-    console.log(this.board);
     this.board.push(new Leader(userName, moves));
+    this.board.sort(function(a, b) {
+      a.moves - b.moves;
+    });
     for(var i = 0; i < leaders.board.length; i++) {
       if(leaders.board[i].name === userName) {
+        console.log(leaders.board[i].name);
+        console.log(userName);
         if(leaders.board[i].moves > moves) {
-          leaders.board[i].moves = moves;
+          leaders.board.splice(i,1);
         }
       }
     }
+    console.log(leaders);
+
     this.pushToLocal();
-    console.log(this);
     console.log(localStorage.getItem('towersOfHanoi'));
   };
   this.pushToLocal = function() {
@@ -113,9 +118,9 @@ function reset() {
   moves = 0;
   fromPole = null;
 // write the code for 3 different children and 3 different parent.
-post0El.appendChild(donut3);
-post0El.appendChild(donut2);
-post0El.appendChild(donut1);
+  post0El.appendChild(donut3);
+  post0El.appendChild(donut2);
+  post0El.appendChild(donut1);
   render();
 }
 

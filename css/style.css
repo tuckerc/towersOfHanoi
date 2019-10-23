@@ -4,11 +4,11 @@ body{
 }
 #main-container{
   background-color:#64b2cd;
-  margin: 1em auto;
+  margin: 3vh auto;
   display: inline-block;
   width: 90%;
   height: auto;
-  min-height: 10em;
+  min-height: 60vh;
   overflow: hidden;
   border-top-right-radius: 70px;
   border-top-left-radius: 70px;
@@ -18,18 +18,19 @@ header h1 {
   text-align: center;
   padding: 0.25em;
   font-family: 'Boogaloo', cursive;
-  font-size: 4em;
+  font-size: 6vh;
   background-color: #da9833;
   color: #d9eeec;
-  margin-top: 0.25em;
+  margin-top: 1vh;
   border-radius: 50%;
   border: 0.2em solid #3c70a4;
 }
 
 header img {
-  width: 4em;
+  width: 10vw;
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 1.5vh;
+  border: 0.2em solid #3c70a4;
 }
 
 #nav {
@@ -44,7 +45,7 @@ header img {
   padding: 0.4em;
   margin: 0.25em;
   font-family: 'Boogaloo', cursive;
-  font-size: 2em;
+  font-size: 5vh;
   background-color: #da9833;
   color: #d9eeec;
   border-radius: 50%;
@@ -72,14 +73,14 @@ header a {
 main{
   background-color:#d9eeec;
   margin: 1.5em auto;
-  margin-bottom: 3em;
-  padding-bottom: 1em;  
-  width:62em;
-  height: 28em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;  
+  width: 75vw;
+  height: 60vh;
   position: relative;
   /* height: auto; */
   overflow: hidden;
-  
+  border: 0.2em solid #3c70a4;
 }
 
 #moves {
@@ -95,6 +96,7 @@ main{
 }
 
 #reset-btn {
+  font-size: 4vh;
   width:auto;
   display: inline-block;
   position: absolute;
@@ -112,39 +114,39 @@ div {
 
 #post0{
   background-color:#da9833;
-  width:50px;
-  height:350px;
-  color:white;
-  margin-left:100px;
+  width:3vw;
+  height:40vh;
+  line-height:80vh;
+  margin-left:5vw;
   position: absolute;
-  bottom:0;
-  left:90px;
+  bottom: 0px;
+  left:9vw;
 }
 
 #post1 {
   background-color:#da9833;
-  width:50px;
-  height:350px;
-  line-height:100px;
-  margin-left:100px;
+  width:3vw;
+  height:40vh;
+  line-height:80vh;
+  margin-left:5vw;
   position: absolute;
   bottom: 0px;
-  left:375px;
+  left:30vw;
 }
 
 
   #post2 {
   background-color:#da9833;
-  width:50px;
-  height:350px;
-  line-height:100px;
-  margin-left:100px;
+  width:3vw;
+  height:40vh;
+  line-height:80vh;
+  margin-left:5vw;
   position: absolute;
   bottom: 0px;
-  left:660px;
+  left:52vw;
 }
 
-#doughnutOne {
+/* #doughnutOne {
   position:absolute;
   top:278px;
   left:4%;
@@ -156,83 +158,84 @@ div {
 #doughnutTwo {
   position:absolute;
   top:278px;
-  left:4%;
-  width:150px;
+  /* left:4%; */
+  /* width:150px;
   height:30px;
   background-color:purple;
   text-align:center;
-}
+} */
 
 .donut3{
   background-color:red;
   position: absolute;
-  right:-6em;
-  width:15em;
-  height:3em;
+  text-align: center;
+  right:-6.4vw;
+  width:16vw;
+  height:8vh;
   border-radius: 50%;
-  line-height:4em;
+  line-height:4vh;
 
 }
 .donut2{
   background-color:purple;
   position: absolute;
-  right:-3.9em;
-  width:11em;
-  height:2.8em;
+  right:-4.3vw;
+  width:12vw;
+  height:6vh;
   border-radius: 50%;
-  line-height:4em;
+  line-height:3vh;
 }
 
 .donut1 {
   background-color: rgb(13, 82, 30);
   position: absolute;
-  right:-2.6em;
-  width:8em;
-  height:2.5em;
+  right:-2.5vw;
+  width:8vw;
+  height:5vh;
   border-radius: 50%;
-  line-height:2em;
+  line-height:2.5vh;
 }
 
 #post0 div:nth-child(1){
   position: absolute;
-  bottom: 0em;
+  bottom: 0vh;
 }
 
 #post0 div:nth-child(2){
     position: absolute;
-    bottom:2.2em;
+    bottom:5vh;
 }
 #post0 div:nth-child(3){
   position: absolute;
-  bottom:4.4em;
+  bottom:9vh;
 }
   
 #post1 div:nth-child(1){
   position: absolute;
-  bottom: 0em;
+  bottom: 0vh;
 }
 
 #post1 div:nth-child(2){
     position: absolute;
-    bottom:2.2em;
+    bottom:5vh;
 }
 #post1 div:nth-child(3){
   position: absolute;
-  bottom:4.4em;
+  bottom:9vh;
 }
 
 #post2 div:nth-child(1){
   position: absolute;
-  bottom: 0em;
+  bottom: 0vh;
 }
 
 #post2 div:nth-child(2){
     position: absolute;
-    bottom:2.2em;
+    bottom:5vh;
 }
 #post2 div:nth-child(3){
   position: absolute;
-  bottom:4.4em;
+  bottom:9vh;
 }
   
   
