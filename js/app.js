@@ -65,7 +65,8 @@ function isAWinner() {
 
 // this is where we putt our animation for the winner
 function winnerWinner() {
-  alert(`Congratulations! You completed Towers Of Hanoi level ${poles.length} in ${moves} moves!`);
+  // alert(`Congratulations! You completed Towers Of Hanoi level ${poles.length} in ${moves} moves!`);
+  promptScoreBoard();
 }
 
 function reset() {
@@ -137,3 +138,12 @@ var donut1 = document.createElement('div');
 donut1.classList.add('donut1');
 post0El.appendChild(donut1);
 
+
+function promptScoreBoard(){
+  var scoreBoardEl = document.getElementById('scoreBoard')
+  scoreBoardEl.style.visibility = "visible";
+  var winnerEl = document.getElementById('winner')
+  winnerEl.textContent = "WINNER WINNER CHICKEN DINNER!"
+  var pEl = document.getElementById('pTag');
+  pEl.textContent = `Number of Moves: ${moves}`
+}
