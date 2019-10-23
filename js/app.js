@@ -57,23 +57,23 @@ function LeaderBoard() {
 
   };
   this.getName = function() {
-    return prompt('What is your name?');
+    // return prompt('What is your name?');
   };
   this.addLeader = function() {
     var userName = this.getName();
     this.board.push(new Leader(userName, moves));
     this.board.sort(function(a, b) {
-      a.moves - b.moves;
+      return a.moves - b.moves;
     });
-    for(var i = 0; i < leaders.board.length; i++) {
-      if(leaders.board[i].name === userName) {
-        console.log(leaders.board[i].name);
-        console.log(userName);
-        if(leaders.board[i].moves > moves) {
-          leaders.board.splice(i,1);
-        }
-      }
-    }
+    // for(var i = 0; i < leaders.board.length; i++) {
+    //   if(leaders.board[i].name === userName) {
+    //     console.log(leaders.board[i].name);
+    //     console.log(userName);
+    //     if(leaders.board[i].moves > moves) {
+    //       leaders.board.splice(i,1);
+    //     }
+    //   }
+    // }
     console.log(leaders);
 
     this.pushToLocal();
@@ -127,7 +127,7 @@ function reset() {
   pole0.donuts.push(new Donut(1));
   moves = 0;
   fromPole = null;
-// write the code for 3 different children and 3 different parent.
+  // write the code for 3 different children and 3 different parent.
   post0El.appendChild(donut3);
   post0El.appendChild(donut2);
   post0El.appendChild(donut1);
