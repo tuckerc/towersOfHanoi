@@ -174,6 +174,9 @@ donut1.classList.add('donut1');
 post0El.appendChild(donut1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4c53642755a756fa680c79bb63018559baf8808c
 
 function promptScoreBoard(){
   var scoreBoardEl = document.getElementById('scoreBoard')
@@ -183,7 +186,14 @@ function promptScoreBoard(){
   var pEl = document.getElementById('pTag');
   pEl.textContent = `Number of Moves: ${moves}`
 }
+<<<<<<< HEAD
 =======
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();
 >>>>>>> 0d5726e5993cb95b3f6f5e986b3d2219bc274261
+=======
+
+var leaders = new LeaderBoard();
+leaders.pullFromLocal();
+
+>>>>>>> 4c53642755a756fa680c79bb63018559baf8808c
