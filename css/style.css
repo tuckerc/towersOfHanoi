@@ -86,7 +86,7 @@ main{
 #moves {
   position:absolute;
   width:auto;
-  left: 1em;
+  left: 0.5em;
   line-height: 65px;
   height:65px;
   text-align: center;
@@ -242,14 +242,14 @@ div {
   visibility: hidden;
   position: fixed;
   z-index: 999999999;
-  width: 50em;
-  height: 36em;
+  width: 80vw;
+  height: 80vh;
   background-color: lightgray;
-  margin: 10em 20em;
+  margin: 3vh 5vw;
   opacity: 0.91;
   border-color: darkgray;
   border-style: dashed;
-  border-width: 5px;
+  border-width: 1vw;
   font-family: 'Boogaloo', cursive;
 }
   
