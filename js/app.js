@@ -180,12 +180,12 @@ post0El.appendChild(donut1);
 
 
 function promptScoreBoard(){
-  var scoreBoardEl = document.getElementById('scoreBoard')
+  var scoreBoardEl = document.getElementById('scoreBoard');
   scoreBoardEl.style.visibility = "visible";
-  var winnerEl = document.getElementById('winner')
-  winnerEl.textContent = "WINNER WINNER CHICKEN DINNER!"
+  var winnerEl = document.getElementById('winner');
+  winnerEl.textContent = "WINNER WINNER CHICKEN DINNER!";
   var pEl = document.getElementById('pTag');
-  pEl.textContent = `Number of Moves: ${moves}`
+  pEl.textContent = `Number of Moves: ${moves}`;
 }
 
 var leaders = new LeaderBoard();
