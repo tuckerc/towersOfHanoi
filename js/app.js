@@ -187,6 +187,9 @@ function promptScoreBoard(){
   var pEl = document.getElementById('pTag');
   pEl.textContent = `Number of Moves: ${moves}`;
 }
+var leaders = new LeaderBoard();
+leaders.pullFromLocal();
+
 
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();
