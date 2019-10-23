@@ -36,18 +36,11 @@ function Pole(id){
     var poleNumber = Number(this.id[this.id.length - 1]);
     if (fromPole === null){
       fromPole = poleNumber;
-      console.log('poleNumber', poleNumber)
-      //!!!!!!!!!!!!!!!!!!!!!
-      //remove later !!!!!!!!pole1
-      //!!!!!!!!!!!!!!!!!!!!!
-      // render();
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
       var parentEl = document.getElementById('post'+ poles[poleNumber].id);
       var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0];
-      console.log('child','donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size);
-      console.log('parent','post'+ poles[poleNumber].id);
       moves++;
       parentEl.appendChild(child);
       poles[fromPole].donuts.pop();
@@ -68,8 +61,26 @@ function LeaderBoard() {
   };
   this.addLeader = function() {
     var userName = this.getName();
+    console.log(this.board);
     this.board.push(new Leader(userName, moves));
+    for(var i = 0; i < leaders.board.length; i++) {
+      if(leaders.board[i].name === userName) {
+        if(leaders.board[i].moves > moves) {
+          leaders.board[i].moves = moves;
+        }
+      }
+    }
+    this.pushToLocal();
     console.log(this);
+    console.log(localStorage.getItem('towersOfHanoi'));
+  };
+  this.pushToLocal = function() {
+    localStorage.setItem('towersOfHanoi',JSON.stringify(leaders));
+  };
+  this.pullFromLocal = function() {
+    if(localStorage.getItem('towersOfHanoi')) {
+      leaders.board = JSON.parse(localStorage.getItem('towersOfHanoi')).board;
+    }
   };
 }
 
@@ -89,7 +100,8 @@ function isAWinner() {
 
 // this is where we putt our animation for the winner
 function winnerWinner() {
-  alert(`Congratulations! You completed Towers Of Hanoi level ${poles.length} in ${moves} moves!`);
+  // alert(`Congratulations! You completed Towers Of Hanoi level ${poles.length} in ${moves} moves!`);
+  promptScoreBoard();
 }
 
 function reset() {
@@ -161,4 +173,16 @@ var donut1 = document.createElement('div');
 donut1.classList.add('donut1');
 post0El.appendChild(donut1);
 
+
+function promptScoreBoard(){
+  var scoreBoardEl = document.getElementById('scoreBoard')
+  scoreBoardEl.style.visibility = "visible";
+  var winnerEl = document.getElementById('winner')
+  winnerEl.textContent = "WINNER WINNER CHICKEN DINNER!"
+  var pEl = document.getElementById('pTag');
+  pEl.textContent = `Number of Moves: ${moves}`
+}
+
 var leaders = new LeaderBoard();
+leaders.pullFromLocal();
+
