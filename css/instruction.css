@@ -40,3 +40,7 @@
  main{
    height: auto;
  }
+ sup{
+    vertical-align: super;
+    font-size: smaller;
+ }
