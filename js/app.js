@@ -36,30 +36,65 @@ function Pole(id){
     var poleNumber = Number(this.id[this.id.length - 1]);
     if (fromPole === null){
       fromPole = poleNumber;
-      console.log('poleNumber', poleNumber)
-      //!!!!!!!!!!!!!!!!!!!!!
-      //remove later !!!!!!!!pole1
-      //!!!!!!!!!!!!!!!!!!!!!
-      // render();
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
-      var parentEl = document.getElementById('post'+ poles[poleNumber].id)
-      var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0]
-      console.log('child','donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)
-      console.log('parent','post'+ poles[poleNumber].id)
+      var parentEl = document.getElementById('post'+ poles[poleNumber].id);
+      var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0];
+      moves++;
       parentEl.appendChild(child);
       poles[fromPole].donuts.pop();
       fromPole = null;
-      moves++;
       render();
     }
   };
 }
+
+// empty leaderboard
+function LeaderBoard() {
+  this.board = [];
+  this.displayBoard = function() {
+
+  };
+  this.getName = function() {
+    return prompt('What is your name?');
+  };
+  this.addLeader = function() {
+    var userName = this.getName();
+    console.log(this.board);
+    this.board.push(new Leader(userName, moves));
+    for(var i = 0; i < leaders.board.length; i++) {
+      if(leaders.board[i].name === userName) {
+        if(leaders.board[i].moves > moves) {
+          leaders.board[i].moves = moves;
+        }
+      }
+    }
+    this.pushToLocal();
+    console.log(this);
+    console.log(localStorage.getItem('towersOfHanoi'));
+  };
+  this.pushToLocal = function() {
+    localStorage.setItem('towersOfHanoi',JSON.stringify(leaders));
+  };
+  this.pullFromLocal = function() {
+    if(localStorage.getItem('towersOfHanoi')) {
+      leaders.board = JSON.parse(localStorage.getItem('towersOfHanoi')).board;
+    }
+  };
+}
+
+function Leader(name, moves) {
+  this.name = name;
+  this.moves = moves;
+}
+
+
 // checks to see if we have a winner
 function isAWinner() {
   if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
     winnerWinner();
+    leaders.addLeader();
   }
 }
 
@@ -138,6 +173,7 @@ var donut1 = document.createElement('div');
 donut1.classList.add('donut1');
 post0El.appendChild(donut1);
 
+<<<<<<< HEAD
 
 function promptScoreBoard(){
   var scoreBoardEl = document.getElementById('scoreBoard')
@@ -147,3 +183,7 @@ function promptScoreBoard(){
   var pEl = document.getElementById('pTag');
   pEl.textContent = `Number of Moves: ${moves}`
 }
+=======
+var leaders = new LeaderBoard();
+leaders.pullFromLocal();
+>>>>>>> 0d5726e5993cb95b3f6f5e986b3d2219bc274261
