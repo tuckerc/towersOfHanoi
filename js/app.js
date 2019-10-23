@@ -98,9 +98,18 @@ function Leader(name, moves) {
 // checks to see if we have a winner
 function isAWinner() {
   if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
-    winnerWinner();
-    leaders.addLeader();
+    timeoutAlert();
+    // //comment out to check timing
+    // winnerWinner();
+    // leaders.addLeader();
   }
+}
+
+function timeoutAlert() {
+  setTimeout(() =>  {
+    winnerWinner() },1000); 
+  setTimeout(() =>  {
+    leaders.addLeader() },2000);   
 }
 
 // this is where we putt our animation for the winner
