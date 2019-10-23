@@ -238,8 +238,88 @@ div {
   bottom:9vh;
 }
   
+#scoreBoard {
+  visibility: hidden;
+  position: fixed;
+  z-index: 999999999;
+  width: 50em;
+  height: 36em;
+  background-color: lightgray;
+  margin: 10em 20em;
+  opacity: 0.91;
+  border-color: darkgray;
+  border-style: dashed;
+  border-width: 5px;
+  font-family: 'Boogaloo', cursive;
+}
   
-  
+#scoreBoard h1{
+  font-size:2.5em;
+  margin-top:3em;
+  margin-bottom:1em;
+}
+#scoreBoard p{
+  font-size:1.8em;
+  margin-bottom:1.8em;
+}
+#username{
+  width:8em;
+  height:2.2em;
+  border-style:none;  
+  outline: none;
+  font-size: 1.8em;
+  text-align: center;
+  line-height: 2.2em;
+  font-family: 'Boogaloo', cursive;
+  color: rgb(199, 136, 0);
+  margin: 0 1em;
+}
+#imgleft{
+  display: inline-block;
+  animation: rotation 0.15s infinite linear;
+}
+
+
+@keyframes rotation {
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#imgright{
+  display: inline-block;
+  animation: rotation 0.15s infinite linear;
+}
+
+
+@keyframes rotation {
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#submit{
+  padding: 0.4em;
+  margin: 0.25em;
+  font-family: 'Boogaloo', cursive;
+  font-size: 2em;
+  background-color: #da9833;
+  color: #d9eeec;
+  border-radius: 50%;
+  border: 0.2em solid #3c70a4;
+  margin-top:1em;
+}
+#submit:hover {
+  background-color: #3c70a4;
+  border: 0.2em solid #da9833;
+  cursor: pointer;
+}
   
   
 
