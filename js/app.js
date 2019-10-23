@@ -3,6 +3,18 @@
 var fromPole = null;
 // counter for moves
 var moves = 0;
+var alertPopup = document.getElementById('alertNoDonuts')
+function alertNoDonuts(){
+  alertPopup.textContent = 'NO DONUTS TO MOVE'
+  alertPopup.style.visibility = "visible";
+  setTimeout(function(){ alertPopup.style.visibility= "hidden" }, 2200);
+}
+function alertBigOnSmall(){
+  alertPopup.textContent = "YOU CAN'T STACK BIG DONUT ON SMALLER DONUT";
+  alertPopup.style.visibility = "visible";
+  setTimeout(function(){ alertPopup.style.visibility= "hidden" }, 2200);
+}
+
 
 //constructor function for donuts
 function Donut(size){
@@ -16,7 +28,7 @@ function Pole(id){
   this.isSmaller = function (){
     if (poles[fromPole].donuts.length === 0){
       fromPole = null;
-      alert('no donouts to move');
+      alertNoDonuts();
       return false;
     }
     else if(this.donuts.length === 0){
@@ -26,10 +38,13 @@ function Pole(id){
       return true;
     } else {
       fromPole = null;
-      alert('you can\'t stack a big donut on a smaller donut');
+      alertBigOnSmall();
       return false;
     }
   };
+
+
+  
   // function to handle donut moves
   this.move = function () {
     

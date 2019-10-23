@@ -45,11 +45,14 @@ header img {
   padding: 0.4em;
   margin: 0.25em;
   font-family: 'Boogaloo', cursive;
-  font-size: 5vh;
+  font-size: 3.5vh;
   background-color: #da9833;
   color: #d9eeec;
   border-radius: 50%;
   border: 0.2em solid #3c70a4;
+    box-shadow: inset 0.2vh 0.2vh 1vh #000000;
+  
+
 }
 
 #nav div:hover, #reset-btn:hover {
@@ -121,6 +124,7 @@ div {
   position: absolute;
   bottom: 0px;
   left:9vw;
+  box-shadow: inset 1vh 1vh 3vh #744f00;
 }
 
 #post1 {
@@ -132,6 +136,7 @@ div {
   position: absolute;
   bottom: 0px;
   left:30vw;
+  box-shadow: inset 1vh 1vh 3vh #744f00;
 }
 
 
@@ -144,26 +149,8 @@ div {
   position: absolute;
   bottom: 0px;
   left:52vw;
+  box-shadow: inset 1vh 1vh 3vh #744f00;
 }
-
-/* #doughnutOne {
-  position:absolute;
-  top:278px;
-  left:4%;
-  width:150px;
-  height:30px;
-  background-color:purple;
-  text-align:center;
-}
-#doughnutTwo {
-  position:absolute;
-  top:278px;
-  /* left:4%; */
-  /* width:150px;
-  height:30px;
-  background-color:purple;
-  text-align:center;
-} */
 
 .donut3{
   background-color:red;
@@ -174,6 +161,7 @@ div {
   height:8vh;
   border-radius: 50%;
   line-height:4vh;
+  box-shadow: inset 0 0 3vh #390000;
 
 }
 .donut2{
@@ -184,6 +172,8 @@ div {
   height:6vh;
   border-radius: 50%;
   line-height:3vh;
+  box-shadow: inset 0 0 2vh #1d0016;
+
 }
 
 .donut1 {
@@ -194,11 +184,13 @@ div {
   height:5vh;
   border-radius: 50%;
   line-height:2.5vh;
+  box-shadow: inset 0 0 1.6vh #011000;
+
 }
 
 #post0 div:nth-child(1){
   position: absolute;
-  bottom: 0vh;
+  bottom: -0.1vh;
 }
 
 #post0 div:nth-child(2){
@@ -212,7 +204,7 @@ div {
   
 #post1 div:nth-child(1){
   position: absolute;
-  bottom: 0vh;
+  bottom: -0.1vh;
 }
 
 #post1 div:nth-child(2){
@@ -226,7 +218,7 @@ div {
 
 #post2 div:nth-child(1){
   position: absolute;
-  bottom: 0vh;
+  bottom: -0.1vh;
 }
 
 #post2 div:nth-child(2){
@@ -321,6 +313,25 @@ div {
   cursor: pointer;
 }
   
-  
+#alertNoDonuts{
+  height:13vh;
+  width:66vh;
+  color:red;
+  font-size: 3vh;
+  font-weight: bold;
+  margin-top:0.8em;
+  visibility: hidden;
+}
 
+/* #alertBigOnSmall {
+  height:3em;
+  width:15em;
+  color:red;
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-top:0.7em;
+  visibility: visible;
+  z-index: 99999;
+  position:fixed;
 
+} */
