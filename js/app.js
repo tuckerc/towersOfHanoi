@@ -1,4 +1,5 @@
 'use strict';
+
 // new variable to store chosen pole's id
 var fromPole = null;
 // counter for moves
