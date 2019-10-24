@@ -83,19 +83,8 @@ function LeaderBoard() {
     leaders.board.sort(function(a, b) {
       return a.moves - b.moves;
     });
-    // for(var i = 0; i < leaders.board.length; i++) {
-    //   if(leaders.board[i].name === userName) {
-    //     console.log(leaders.board[i].name);
-    //     console.log(userName);
-    //     if(leaders.board[i].moves > moves) {
-    //       leaders.board.splice(i,1);
-    //     }
-    //   }
-    // }
-    console.log(leaders);
 
     leaders.pushToLocal();
-    console.log(localStorage.getItem('towersOfHanoi'));
   };
   this.pushToLocal = function() {
     localStorage.setItem('towersOfHanoi',JSON.stringify(leaders));
@@ -107,6 +96,7 @@ function LeaderBoard() {
   };
 }
 
+// object constructor for Leader
 function Leader(name, moves) {
   this.name = name;
   this.moves = moves;
@@ -125,6 +115,7 @@ function winnerWinner() {
   promptScoreBoard();
 }
 
+// handler function for the reset button
 function reset() {
   for (var i = 0; i < poles.length; i++) {
     poles[i].donuts = [];
@@ -161,7 +152,6 @@ var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
 
 // add pole event listeners
-
 if(document.getElementById('post0')) {
   document.getElementById('post0').addEventListener('click', poles[0].move);
 }
@@ -192,6 +182,8 @@ if(document.getElementById('leaderBoard')) {
 
 render();
 
+// create 3 donuts if post0 exists
+if(document.getElementById('post0')) {
   var post0El = document.getElementById('post0');
 
   var donut3 = document.createElement('div');
@@ -205,11 +197,12 @@ render();
   var donut1 = document.createElement('div');
   donut1.classList.add('donut1');
   post0El.appendChild(donut1);
-
+}
 
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();
 
+// function to be called when we have a winner to prompt for name
 function promptScoreBoard(){
   var scoreBoardEl = document.getElementById('scoreBoard');
   scoreBoardEl.style.visibility = "visible";
@@ -224,3 +217,17 @@ function promptScoreBoard(){
     document.location.assign('leaderboard.html');
   });
 }
+
+// function to update the minimum possible moves
+function updateMinMoves() {
+  var movesElement = document.getElementById('minMoves');
+  if(document.getElementById('post0')) {
+    var donutCount = document.getElementById('post0').children.length;
+  }
+  var minMoves = Math.pow(2, donutCount) - 1;
+  if(movesElement) {
+    movesElement.textContent = `Minimum Possible Moves: ${minMoves}`;
+  }
+}
+
+updateMinMoves();

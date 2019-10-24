@@ -48,7 +48,7 @@ header img {
   vertical-align: 50%;
 }
 
-#nav div, #reset-btn {
+#nav div, #reset-btn, .donutAdjust {
   padding: 0.2em;
   margin: 0.25em;
   font-family: 'Boogaloo', cursive;
@@ -57,9 +57,7 @@ header img {
   color: #d9eeec;
   border-radius: 30%;
   border: 0.2em solid #3c70a4;
-    box-shadow: inset 0.2vh 0.2vh 1vh #000000;
-  
-
+  box-shadow: inset 0.2vh 0.2vh 1vh #000000;
 }
 
 #nav div:hover, #reset-btn:hover {
@@ -94,15 +92,15 @@ main{
 }
 
 #moves {
+  margin-top: 2.5vh;
   position:absolute;
   width:auto;
-  left: 1.2vw;
-  line-height: 8vh;
-  height:2vh;
-  text-align: center;
+  display: inline-block;
+  left: 1vw;
+  text-align: left;
   font-family: 'Boogaloo', cursive;
-  font-size: 2vw;
-  color: #21647a;
+  font-size: 4vh;
+  color: #3c70a4;
 }
 
 #reset-btn {
@@ -328,6 +326,38 @@ div {
   font-weight: bold;
   margin-top:0.8em;
   visibility: hidden;
+}
+
+.donutAdjust {
+  font-size: 4vh;
+  width:2vw;
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  left: 55vw;
+}
+
+#plus-btn {
+  margin-left: 16vh;
+}
+
+#minus-btn {
+  margin-left: 8vh;
+}
+
+#changeLevel, #minMoves {
+  margin-top: 2.5vh;
+  font-size: 4vh;
+  display:inline-block;
+  position: absolute;
+  text-align: right;
+  left: 49.5vw;
+  font-family: 'Boogaloo', cursive;
+  color: #3c70a4;
+}
+
+#minMoves {
+  left: 10vw;
 }
 
 /* #alertBigOnSmall {
