@@ -160,9 +160,9 @@ var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
 
 // creating sounds
-var buttonAudio = new Audio('/Users/Ran/code-fellows/201d53/towersOfHanoi/sound/button.m4a');
-var buttonOffAudio = new Audio('/Users/Ran/code-fellows/201d53/towersOfHanoi/sound/buttonoff.m4a');
-var slapAudio = new Audio('/Users/Ran/code-fellows/201d53/towersOfHanoi/sound/slap.m4a');
+var buttonAudio = new Audio('sound/button.m4a');
+var buttonOffAudio = new Audio('sound/buttonoff.m4a');
+var slapAudio = new Audio('sound/slap.m4a');
 slapAudio.volume = 0.35;
 
 
@@ -200,19 +200,23 @@ render();
 if(document.getElementById('post0')) {
   var post0El = document.getElementById('post0');
 
-var donut4 = document.createElement('div');
+var donut4 = document.createElement('img');
+donut4.src = 'img/donutFour.png'
 donut4.classList.add('donut4');
 post0El.appendChild(donut4);
 
-var donut3 = document.createElement('div');
+var donut3 = document.createElement('img');
+donut3.src = 'img/donutThree.png'
 donut3.classList.add('donut3');
 post0El.appendChild(donut3);
 
-  var donut2 = document.createElement('div')
+  var donut2 = document.createElement('img')
+  donut2.src = 'img/DonutTwo.png'
   donut2.classList.add('donut2');
   post0El.appendChild(donut2);
 
-  var donut1 = document.createElement('div');
+  var donut1 = document.createElement('img');
+  donut1.src = 'img/DonutOne.png'
   donut1.classList.add('donut1');
   post0El.appendChild(donut1);
 }
@@ -234,3 +238,13 @@ function promptScoreBoard(){
     document.location.assign('leaderboard.html');
   });
 }
+
+
+function hideScoreBoard(){
+  var scoreBoardEl = document.getElementById('scoreBoard');
+  scoreBoardEl.style.visibility = "hidden";
+
+
+}
+document.getElementById("x").addEventListener('click',function(){hideScoreBoard()});
+
