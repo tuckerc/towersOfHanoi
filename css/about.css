@@ -41,30 +41,37 @@
   display: inline-block;
   /* //added the below info */
   backface-visibility: hidden;
-  /* opacity: 1;
-  transition: 1s ease; */
-  position:relative;
+  opacity: 1;
+  transition: 1s ease;
+}
+
+/* //added section  */
+.pCrewInfo{
+  position: absolute;
+  opacity: 0;
+  transition: 1s ease;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 /* //added section  */
 .imgCrew:hover {
-  opacity: 0.3;
-}
+  opacity: 0.2;
+  }
 
-.pCrewInfo{
-    visibility: hidden;
-    height: 50%;
-    width: 20%;
-    /* display: inline-block; */
-    overflow-wrap: break-word;
-    position: absolute;
-    top:10vh;
-    left:14vw;
-}
+  /* //added section  */
+  .pCrewInfo:hover {
+opacity: 1;
+  }
 
-.imgCrew:hover + .pCrewInfo{
-    visibility:visible;
-}
+  .pCrewInfo{
+background-color: darkgreen;
+color: blue;
+font-size: 15px;
+  }
 
  main{
   height: 100%;
