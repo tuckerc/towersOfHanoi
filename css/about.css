@@ -26,6 +26,9 @@
   font-size: 3em;
   justify-content: center;
   margin-bottom: 0.5em;
+  color: #3c70a4;
+  font-family: 'Fascinate Inline', cursive;
+  text-shadow: 1.5px 1.5px #da9833;
 } 
 
   .crew{
@@ -36,16 +39,24 @@
 
 .imgCrew{
   /* //changed height & width to 50%.  It was 40% each */
-  height: 50%;
-  width: 50%;
+  height: 70%;
+  width: 70%;
   display: inline-block;
   /* //added the below info */
   backface-visibility: hidden;
-  opacity: 1;
-  transition: 1s ease;
+  /* opacity: 1;
+  transition: 1s ease; */
+  position:relative;
+  border: 5px dashed #3c70a4;
+  border-radius: 20%;
 }
 
 /* //added section  */
+.imgCrew:hover {
+  opacity: 0.4;
+}
+
+
 .pCrewInfo{
   position: absolute;
   opacity: 0;
@@ -76,3 +87,20 @@ font-size: 15px;
  main{
   height: 100%;
 } 
+#elh{
+  visibility: hidden;
+  height: 50%;
+  width: 20%;
+  /* display: inline-block; */
+  overflow-wrap: break-word;
+  position: absolute;
+  top:10vh;
+  left:14vw;
+}
+h1{
+  font-family: 'Modak', cursive;
+  font-weight: bolder;
+  color: #3c70a4;
+  text-shadow: 2px 2px #da9833;
+  font-size: 2em;
+}
