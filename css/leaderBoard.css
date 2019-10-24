@@ -13,7 +13,7 @@ td{
 #leaderBoard{
     display: inline-block;
     margin-top: 3vh;
-    background: radial-gradient(#d9eeec 10%, #64b2cd 10%, #eb9d28 50%);
+    background: linear-gradient(#d9eeec, #64b2cd, #eb9d28 );
 }
 th{
     text-align: center;
