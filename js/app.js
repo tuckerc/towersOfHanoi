@@ -115,8 +115,8 @@ function Leader(name, moves) {
 
 // checks to see if we have a winner
 function isAWinner() {
-  
-  if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
+  if(poles[1].donuts.length === 5 || poles[2].donuts.length === 5) {
+
     winnerWinner();
   }
 }
@@ -130,6 +130,7 @@ function reset() {
   for (var i = 0; i < poles.length; i++) {
     poles[i].donuts = [];
   }
+
   for(var j = donutCount; j > 0; j--) {
     pole0.donuts.push(new Donut(j));
     post0El.appendChild(donuts[j]);
