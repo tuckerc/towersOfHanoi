@@ -1,6 +1,8 @@
 th, tr, td{
     border-bottom: 1px solid #3c70a4;
     color: #3c70a4;
+    color: #004b96;
+    font-family: 'Boogaloo', cursive;
 }
 td{
     width: 20vw;
