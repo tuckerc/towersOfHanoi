@@ -36,8 +36,11 @@ header h1 {
 header img {
   width: 10vw;
   text-align: center;
-  margin-bottom: 1.5vh;
+
+  /* margin-bottom: 0.5vh; */
   border: 0.2em solid #3c70a4;
+  height: 15vh;
+  border-radius: 20%;
 }
 
 #nav {
