@@ -1,8 +1,12 @@
 'use strict';
+
 // new variable to store chosen pole's id
 var fromPole = null;
 // counter for moves
 var moves = 0;
+// counter for number of donuts
+var donutCount = 0;
+
 var alertPopup = document.getElementById('alertNoDonuts')
 function alertNoDonuts(){
   alertPopup.textContent = 'NO DONUTS TO MOVE'
@@ -112,6 +116,7 @@ function Leader(name, moves) {
 // checks to see if we have a winner
 function isAWinner() {
   if(poles[1].donuts.length === 5 || poles[2].donuts.length === 5) {
+
     winnerWinner();
   }
 }
@@ -125,19 +130,24 @@ function reset() {
   for (var i = 0; i < poles.length; i++) {
     poles[i].donuts = [];
   }
-  pole0.donuts.push(new Donut(5));
-  pole0.donuts.push(new Donut(4));
-  pole0.donuts.push(new Donut(3));
-  pole0.donuts.push(new Donut(2));
-  pole0.donuts.push(new Donut(1));
+
+  for(var j = donutCount; j > 0; j--) {
+    pole0.donuts.push(new Donut(j));
+    post0El.appendChild(donuts[j]);
+  }
+  // pole0.donuts.push(new Donut(5));
+  // pole0.donuts.push(new Donut(4));
+  // pole0.donuts.push(new Donut(3));
+  // pole0.donuts.push(new Donut(2));
+  // pole0.donuts.push(new Donut(1));
   moves = 0;
   fromPole = null;
   // write the code for 3 different children and 3 different parent.
-  post0El.appendChild(donut5);
-  post0El.appendChild(donut4);
-  post0El.appendChild(donut3);
-  post0El.appendChild(donut2);
-  post0El.appendChild(donut1);
+  // post0El.appendChild(donut5);
+  // post0El.appendChild(donut4);
+  // post0El.appendChild(donut3);
+  // post0El.appendChild(donut2);
+  // post0El.appendChild(donut1);
   render();
 }
 
@@ -164,7 +174,7 @@ var poles = [pole0,pole1,pole2];
 
 // creating sounds
 var buttonAudio = new Audio('sound/button.m4a');
-var buttonOffAudio = new Audio('sound/buttonoff.m4a');
+var buttonOffAudio = new Audio('sound/buttonOff.m4a');
 var slapAudio = new Audio('sound/slap.m4a');
 slapAudio.volume = 0.35;
 
@@ -228,6 +238,7 @@ donut1.src = 'img/DonutOne.png'
 donut1.classList.add('donut1');
 post0El.appendChild(donut1);
 
+var donuts = [donut1, donut2, donut3, donut4, donut5];
 
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();
@@ -256,3 +267,23 @@ function hideScoreBoard(){
 }
 document.getElementById("x").addEventListener('click',function(){hideScoreBoard()});
 
+// function to update the minimum possible moves
+function updateMinMoves() {
+  var movesElement = document.getElementById('minMoves');
+  if(document.getElementById('post0')) {
+    var donutCount = document.getElementById('post0').children.length;
+  }
+  var minMoves = Math.pow(2, donutCount) - 1;
+  if(movesElement) {
+    movesElement.textContent = `Minimum Possible Moves: ${minMoves}`;
+  }
+}
+
+updateMinMoves();
+
+function subtractDonut() {
+  donutCount--;
+  reset();
+}
+
+document.getElementById('minus-btn').addEventListener('click',subtractDonut);

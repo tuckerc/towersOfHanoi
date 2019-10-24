@@ -24,7 +24,7 @@
     <div id="main-container">
       <header>
         <div id='leftLogo' class="logo">
-          <a href="index.html"><img src='logoNew1.PNG'></a>
+          <a href="index.html"><img src='img/logoNew1.PNG'></a>
         </div>
         <div id="nav">
           <h1>Towers of Hanoi</h1>
@@ -33,14 +33,21 @@
           <div id='leaderBoard' href='leaderboard.html'>Leader Board</div>
         </div>
         <div id='rightLogo' class='logo'>
-          <a href="index.html"><img src='logoNew2.PNG'></a>
+          <a href="index.html"><img src='img/logoNew2.PNG'></a>
         </div>
       </header>
+
+      <p>move the whole stack of donuts to another tower without stacking a larger donut on a smaller donut</p>
+      <p>-- click one tower and then another to move a donut --</p>
 
       <main>
         <div id="alertNoDonuts"></div>
         <div id="reset-btn">Reset</div>
-        <div id="moves">Moves : </div>
+        <h2 id='minMoves'>Minimum Possible Moves:</h2>
+        <h2 id='changeLevel'>Change Level</h2>
+        <div id='minus-btn' class='donutAdjust'>-</div>
+        <div id='plus-btn' class='donutAdjust'>+</div>
+        <div id="moves">Moves: </div>
         <div id='post0' class="towers"></div>            
         <div id='post1' class="towers"></div>
         <div id='post2'class="towers"></div>
