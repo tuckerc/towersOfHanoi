@@ -197,7 +197,6 @@ if(document.getElementById('leaderBoard')) {
 
 render();
 
-if(document.getElementById('post0')) {
   var post0El = document.getElementById('post0');
 
 var donut4 = document.createElement('img');
@@ -219,7 +218,7 @@ post0El.appendChild(donut3);
   donut1.src = 'img/DonutOne.png'
   donut1.classList.add('donut1');
   post0El.appendChild(donut1);
-}
+
 
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();
