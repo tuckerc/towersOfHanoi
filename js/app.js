@@ -5,9 +5,9 @@ var fromPole = null;
 // counter for moves
 var moves = 0;
 // counter for number of donuts
-var donutCount = 0;
+var donutCount = 5;
 
-var alertPopup = document.getElementById('alertNoDonuts')
+var alertPopup = document.getElementById('alertNoDonuts');
 function alertNoDonuts(){
   alertPopup.textContent = 'NO DONUTS TO MOVE'
   alertPopup.style.visibility = "visible";
@@ -115,7 +115,7 @@ function Leader(name, moves) {
 
 // checks to see if we have a winner
 function isAWinner() {
-  if(poles[1].donuts.length === 5 || poles[2].donuts.length === 5) {
+  if(poles[1].donuts.length === donutCount || poles[2].donuts.length === donutCount) {
 
     winnerWinner();
   }
@@ -131,23 +131,45 @@ function reset() {
     poles[i].donuts = [];
   }
 
-  for(var j = donutCount; j > 0; j--) {
-    pole0.donuts.push(new Donut(j));
-    post0El.appendChild(donuts[j]);
+  post0El.innerHTML = '';
+  post1El.innerHTML = '';
+  post2El.innerHTML = '';
+
+  if(donutCount === 5) {
+    pole0.donuts.push(new Donut(5));
+    pole0.donuts.push(new Donut(4));
+    pole0.donuts.push(new Donut(3));
+    pole0.donuts.push(new Donut(2));
+    pole0.donuts.push(new Donut(1));
+    post0El.appendChild(donut5);
+    post0El.appendChild(donut4);
+    post0El.appendChild(donut3);
+    post0El.appendChild(donut2);
+    post0El.appendChild(donut1);
   }
-  // pole0.donuts.push(new Donut(5));
-  // pole0.donuts.push(new Donut(4));
-  // pole0.donuts.push(new Donut(3));
-  // pole0.donuts.push(new Donut(2));
-  // pole0.donuts.push(new Donut(1));
+  else if(donutCount === 4) {
+    pole0.donuts.push(new Donut(5));
+    pole0.donuts.push(new Donut(4));
+    pole0.donuts.push(new Donut(3));
+    pole0.donuts.push(new Donut(2));
+    post0El.appendChild(donut5);
+    post0El.appendChild(donut4);
+    post0El.appendChild(donut3);
+    post0El.appendChild(donut2);
+  }
+  else if(donutCount === 3) {
+    pole0.donuts.push(new Donut(5));
+    pole0.donuts.push(new Donut(4));
+    pole0.donuts.push(new Donut(3));
+    post0El.appendChild(donut5);
+    post0El.appendChild(donut4);
+    post0El.appendChild(donut3);
+  }
+  
   moves = 0;
   fromPole = null;
   // write the code for 3 different children and 3 different parent.
-  // post0El.appendChild(donut5);
-  // post0El.appendChild(donut4);
-  // post0El.appendChild(donut3);
-  // post0El.appendChild(donut2);
-  // post0El.appendChild(donut1);
+  updateMinMoves();
   render();
 }
 
@@ -211,6 +233,8 @@ if(document.getElementById('leaderBoard')) {
 render();
 
 var post0El = document.getElementById('post0');
+var post1El = document.getElementById('post1');
+var post2El = document.getElementById('post2');
 
 //making new donuts in HTML
 var donut5 = document.createElement('img');
@@ -270,9 +294,6 @@ document.getElementById("x").addEventListener('click',function(){hideScoreBoard(
 // function to update the minimum possible moves
 function updateMinMoves() {
   var movesElement = document.getElementById('minMoves');
-  if(document.getElementById('post0')) {
-    var donutCount = document.getElementById('post0').children.length;
-  }
   var minMoves = Math.pow(2, donutCount) - 1;
   if(movesElement) {
     movesElement.textContent = `Minimum Possible Moves: ${minMoves}`;
@@ -282,8 +303,19 @@ function updateMinMoves() {
 updateMinMoves();
 
 function subtractDonut() {
-  donutCount--;
-  reset();
+  if(donutCount > 3) {
+    donutCount--;
+    reset();
+  }
 }
 
 document.getElementById('minus-btn').addEventListener('click',subtractDonut);
+
+function addDonut() {
+  if(donutCount < 5) {
+    donutCount++;
+    reset();
+  }
+}
+
+document.getElementById('plus-btn').addEventListener('click',addDonut);
