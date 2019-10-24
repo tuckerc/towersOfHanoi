@@ -79,9 +79,8 @@ main{
   margin-bottom: 1em;
   padding-bottom: 0.5em;  
   width: 75vw;
-  height: 60vh;
+  height: 63.5vh;
   position: relative;
-  /* height: auto; */
   overflow: hidden;
   border: 0.2em solid #3c70a4;
 }
@@ -89,12 +88,12 @@ main{
 #moves {
   position:absolute;
   width:auto;
-  left: 0.5em;
-  line-height: 65px;
-  height:65px;
+  left: 1.2vw;
+  line-height: 8vh;
+  height:2vh;
   text-align: center;
   font-family: 'Boogaloo', cursive;
-  font-size: 2em;
+  font-size: 2vw;
   color: #21647a;
 }
 
@@ -158,8 +157,6 @@ div {
   width:19.0vw;
   height:15.7vh;
   filter: drop-shadow(0px 5px 7px #0000002f);
-
-  
 }
 
 .donut3{
@@ -170,13 +167,13 @@ div {
   filter: drop-shadow(0px 5px 7px #0000002f);
 }
 
+
 .donut2{
   position: absolute;
   right:-5.19vw;
   width:13.5vw;
   height:12.3vh;
   filter: drop-shadow(0px 5px 3px #78cdf258);
-
 }
 
 .donut1 {
@@ -184,7 +181,6 @@ div {
   right:-3.4vw;
   width:9.7vw;
   filter: drop-shadow(0px 4px 3px #9b285472);
-
 }
 
 #post0 img:nth-child(1){
@@ -194,7 +190,7 @@ div {
 
 #post0 img:nth-child(2){
     position: absolute;
-    bottom:6.8vh;
+    bottom:5vh;
 }
 #post0 img:nth-child(3){
   position: absolute;
@@ -212,7 +208,7 @@ div {
 
 #post1 img:nth-child(2){
     position: absolute;
-    bottom:6.8vh;
+    bottom:5vh;
 }
 #post1 img:nth-child(3){
   position: absolute;
@@ -230,7 +226,7 @@ div {
 
 #post2 img:nth-child(2){
     position: absolute;
-    bottom:6.8vh;
+    bottom:5vh;
 }
 #post2 img:nth-child(3){
   position: absolute;
@@ -239,6 +235,7 @@ div {
 #post2 img:nth-child(4){
   position: absolute;
   bottom: 17.5vh;
+
 }
   
 #scoreBoard {
@@ -255,6 +252,7 @@ div {
   border-width: 1vw;
   font-family: 'Boogaloo', cursive;
 }
+
 #x{
   position: absolute;
   top:3vh;
@@ -347,3 +345,15 @@ div {
   visibility: hidden;
 }
 
+/* #alertBigOnSmall {
+  height:3em;
+  width:15em;
+  color:red;
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-top:0.7em;
+  visibility: visible;
+  z-index: 99999;
+  position:fixed;
+
+} */
