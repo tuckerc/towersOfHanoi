@@ -7,13 +7,11 @@ var alertPopup = document.getElementById('alertNoDonuts')
 function alertNoDonuts(){
   alertPopup.textContent = 'NO DONUTS TO MOVE'
   alertPopup.style.visibility = "visible";
-  slapAudio.play();
   setTimeout(function(){ alertPopup.style.visibility= "hidden" }, 2200);
 }
 function alertBigOnSmall(){
   alertPopup.textContent = "YOU CAN'T STACK BIG DONUT ON SMALLER DONUT";
   alertPopup.style.visibility = "visible";
-  slapAudio.play();
   setTimeout(function(){ alertPopup.style.visibility= "hidden" }, 2200);
 }
 
@@ -53,15 +51,13 @@ function Pole(id){
     var poleNumber = Number(this.id[this.id.length - 1]);
     if (fromPole === null){
       fromPole = poleNumber;
-      buttonAudio.play();
-
+      
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
       var parentEl = document.getElementById('post'+ poles[poleNumber].id);
       var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0];
       moves++;
-      buttonOffAudio.play()
       parentEl.appendChild(child);
       poles[fromPole].donuts.pop();
       fromPole = null;
@@ -88,10 +84,7 @@ function LeaderBoard() {
       return a.moves - b.moves;
     });
 
-    console.log(leaders);
-
     leaders.pushToLocal();
-    console.log(localStorage.getItem('towersOfHanoi'));
   };
   this.pushToLocal = function() {
     localStorage.setItem('towersOfHanoi',JSON.stringify(leaders));
@@ -103,6 +96,7 @@ function LeaderBoard() {
   };
 }
 
+// object constructor for Leader
 function Leader(name, moves) {
   this.name = name;
   this.moves = moves;
@@ -111,7 +105,7 @@ function Leader(name, moves) {
 
 // checks to see if we have a winner
 function isAWinner() {
-  if(poles[1].donuts.length === 4 || poles[2].donuts.length === 4) {
+  if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
     winnerWinner();
   }
 }
@@ -121,18 +115,17 @@ function winnerWinner() {
   promptScoreBoard();
 }
 
+// handler function for the reset button
 function reset() {
   for (var i = 0; i < poles.length; i++) {
     poles[i].donuts = [];
   }
-  pole0.donuts.push(new Donut(4));
   pole0.donuts.push(new Donut(3));
   pole0.donuts.push(new Donut(2));
   pole0.donuts.push(new Donut(1));
   moves = 0;
   fromPole = null;
   // write the code for 3 different children and 3 different parent.
-  post0El.appendChild(donut4);
   post0El.appendChild(donut3);
   post0El.appendChild(donut2);
   post0El.appendChild(donut1);
@@ -149,7 +142,6 @@ function render() {
 // instantiate a new pole1
 var pole0 = new Pole(0);
 //populate the pole with 3 donuts at the beginning of page.
-pole0.donuts.push(new Donut(4));
 pole0.donuts.push(new Donut(3));
 pole0.donuts.push(new Donut(2));
 pole0.donuts.push(new Donut(1));
@@ -159,14 +151,7 @@ var pole1 = new Pole(1);
 var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
 
-// creating sounds
-var buttonAudio = new Audio('sound/button.m4a');
-var buttonOffAudio = new Audio('sound/buttonoff.m4a');
-var slapAudio = new Audio('sound/slap.m4a');
-slapAudio.volume = 0.35;
-
-
-
+// add pole event listeners
 if(document.getElementById('post0')) {
   document.getElementById('post0').addEventListener('click', poles[0].move);
 }
@@ -221,9 +206,11 @@ donut1.classList.add('donut1');
 post0El.appendChild(donut1);
 
 
+
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();
 
+// function to be called when we have a winner to prompt for name
 function promptScoreBoard(){
   var scoreBoardEl = document.getElementById('scoreBoard');
   scoreBoardEl.style.visibility = "visible";
@@ -239,12 +226,16 @@ function promptScoreBoard(){
   });
 }
 
-
-function hideScoreBoard(){
-  var scoreBoardEl = document.getElementById('scoreBoard');
-  scoreBoardEl.style.visibility = "hidden";
-
-
+// function to update the minimum possible moves
+function updateMinMoves() {
+  var movesElement = document.getElementById('minMoves');
+  if(document.getElementById('post0')) {
+    var donutCount = document.getElementById('post0').children.length;
+  }
+  var minMoves = Math.pow(2, donutCount) - 1;
+  if(movesElement) {
+    movesElement.textContent = `Minimum Possible Moves: ${minMoves}`;
+  }
 }
-document.getElementById("x").addEventListener('click',function(){hideScoreBoard()});
 
+updateMinMoves();

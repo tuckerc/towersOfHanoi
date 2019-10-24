@@ -13,17 +13,18 @@ document.getElementById('index').addEventListener('click', function() {
 
 function displayBoard() {
   var table = document.getElementById('leaderBoard');
-  var board = JSON.parse(localStorage.getItem('towersOfHanoi')).board;
-  console.log(table);
-  for(var i = 0; i < 10; i++) {
-    var newTR = document.createElement('tr');
-    var name = document.createElement('td');
-    var moves = document.createElement('td');
-    name.textContent = board[i].name;
-    moves.textContent = board[i].moves;
-    newTR.appendChild(name);
-    newTR.appendChild(moves);
-    table.appendChild(newTR);
+  if(localStorage.getItem('towersOfHanoi')) {
+    var board = JSON.parse(localStorage.getItem('towersOfHanoi')).board;
+    for(var i = 0; i < 10; i++) {
+      var newTR = document.createElement('tr');
+      var name = document.createElement('td');
+      var moves = document.createElement('td');
+      name.textContent = board[i].name;
+      moves.textContent = board[i].moves;
+      newTR.appendChild(name);
+      newTR.appendChild(moves);
+      table.appendChild(newTR);
+    }
   }
 }
 
