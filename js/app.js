@@ -4,6 +4,9 @@
 var fromPole = null;
 // counter for moves
 var moves = 0;
+// counter for number of donuts
+var donutCount = 0;
+
 var alertPopup = document.getElementById('alertNoDonuts')
 function alertNoDonuts(){
   alertPopup.textContent = 'NO DONUTS TO MOVE'
@@ -106,6 +109,7 @@ function Leader(name, moves) {
 
 // checks to see if we have a winner
 function isAWinner() {
+  
   if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
     winnerWinner();
   }
@@ -121,12 +125,16 @@ function reset() {
   for (var i = 0; i < poles.length; i++) {
     poles[i].donuts = [];
   }
+  pole0.donuts.push(new Donut(5));
+  pole0.donuts.push(new Donut(4));
   pole0.donuts.push(new Donut(3));
   pole0.donuts.push(new Donut(2));
   pole0.donuts.push(new Donut(1));
   moves = 0;
   fromPole = null;
   // write the code for 3 different children and 3 different parent.
+  post0El.appendChild(donut5);
+  post0El.appendChild(donut4);
   post0El.appendChild(donut3);
   post0El.appendChild(donut2);
   post0El.appendChild(donut1);
@@ -143,6 +151,8 @@ function render() {
 // instantiate a new pole1
 var pole0 = new Pole(0);
 //populate the pole with 3 donuts at the beginning of page.
+pole0.donuts.push(new Donut(5));
+pole0.donuts.push(new Donut(4));
 pole0.donuts.push(new Donut(3));
 pole0.donuts.push(new Donut(2));
 pole0.donuts.push(new Donut(1));
@@ -187,6 +197,14 @@ render();
 if(document.getElementById('post0')) {
   var post0El = document.getElementById('post0');
 
+  var donut5 = document.createElement('div');
+  donut5.classList.add('donut5');
+  post0El.appendChild(donut5);
+
+  var donut4 = document.createElement('div');
+  donut4.classList.add('donut4');
+  post0El.appendChild(donut4);
+  
   var donut3 = document.createElement('div');
   donut3.classList.add('donut3');
   post0El.appendChild(donut3);
