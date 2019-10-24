@@ -197,7 +197,7 @@ if(document.getElementById('post0')) {
   var donut1 = document.createElement('div');
   donut1.classList.add('donut1');
   post0El.appendChild(donut1);
-
+}
 
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();
@@ -221,9 +221,13 @@ function promptScoreBoard(){
 // function to update the minimum possible moves
 function updateMinMoves() {
   var movesElement = document.getElementById('minMoves');
-  var donutCount = document.getElementById('post0').children.length;
+  if(document.getElementById('post0')) {
+    var donutCount = document.getElementById('post0').children.length;
+  }
   var minMoves = Math.pow(2, donutCount) - 1;
-  movesElement.textContent = `Minimum Possible Moves: ${minMoves}`;
+  if(movesElement) {
+    movesElement.textContent = `Minimum Possible Moves: ${minMoves}`;
+  }
 }
 
 updateMinMoves();
