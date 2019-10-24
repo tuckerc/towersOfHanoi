@@ -111,7 +111,7 @@ function Leader(name, moves) {
 
 // checks to see if we have a winner
 function isAWinner() {
-  if(poles[1].donuts.length === 4 || poles[2].donuts.length === 4) {
+  if(poles[1].donuts.length === 5 || poles[2].donuts.length === 5) {
     winnerWinner();
   }
 }
@@ -125,6 +125,7 @@ function reset() {
   for (var i = 0; i < poles.length; i++) {
     poles[i].donuts = [];
   }
+  pole0.donuts.push(new Donut(5));
   pole0.donuts.push(new Donut(4));
   pole0.donuts.push(new Donut(3));
   pole0.donuts.push(new Donut(2));
@@ -132,6 +133,7 @@ function reset() {
   moves = 0;
   fromPole = null;
   // write the code for 3 different children and 3 different parent.
+  post0El.appendChild(donut5);
   post0El.appendChild(donut4);
   post0El.appendChild(donut3);
   post0El.appendChild(donut2);
@@ -149,6 +151,7 @@ function render() {
 // instantiate a new pole1
 var pole0 = new Pole(0);
 //populate the pole with 3 donuts at the beginning of page.
+pole0.donuts.push(new Donut(5));
 pole0.donuts.push(new Donut(4));
 pole0.donuts.push(new Donut(3));
 pole0.donuts.push(new Donut(2));
@@ -200,6 +203,11 @@ render();
 var post0El = document.getElementById('post0');
 
 //making new donuts in HTML
+var donut5 = document.createElement('img');
+donut5.src = 'img/donutFive.png'
+donut5.classList.add('donut5');
+post0El.appendChild(donut5);
+
 var donut4 = document.createElement('img');
 donut4.src = 'img/donutFour.png'
 donut4.classList.add('donut4');
