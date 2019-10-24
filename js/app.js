@@ -61,7 +61,7 @@ function Pole(id){
       var parentEl = document.getElementById('post'+ poles[poleNumber].id);
       var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0];
       moves++;
-      buttonOffAudio.play()
+      buttonOffAudio.play();
       parentEl.appendChild(child);
       poles[fromPole].donuts.pop();
       fromPole = null;
@@ -160,9 +160,9 @@ var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
 
 // creating sounds
-var buttonAudio = new Audio('/Users/Ran/code-fellows/201d53/towersOfHanoi/sound/button.m4a');
-var buttonOffAudio = new Audio('/Users/Ran/code-fellows/201d53/towersOfHanoi/sound/buttonoff.m4a');
-var slapAudio = new Audio('/Users/Ran/code-fellows/201d53/towersOfHanoi/sound/slap.m4a');
+var buttonAudio = new Audio('sound/button.m4a');
+var buttonOffAudio = new Audio('sound/buttonoff.m4a');
+var slapAudio = new Audio('sound/slap.m4a');
 slapAudio.volume = 0.35;
 
 
@@ -200,13 +200,13 @@ render();
 if(document.getElementById('post0')) {
   var post0El = document.getElementById('post0');
 
-var donut4 = document.createElement('div');
-donut4.classList.add('donut4');
-post0El.appendChild(donut4);
+  var donut4 = document.createElement('div');
+  donut4.classList.add('donut4');
+  post0El.appendChild(donut4);
 
-var donut3 = document.createElement('div');
-donut3.classList.add('donut3');
-post0El.appendChild(donut3);
+  var donut3 = document.createElement('div');
+  donut3.classList.add('donut3');
+  post0El.appendChild(donut3);
 
   var donut2 = document.createElement('div')
   donut2.classList.add('donut2');
