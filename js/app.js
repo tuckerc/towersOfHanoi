@@ -7,13 +7,11 @@ var alertPopup = document.getElementById('alertNoDonuts')
 function alertNoDonuts(){
   alertPopup.textContent = 'NO DONUTS TO MOVE'
   alertPopup.style.visibility = "visible";
-  slapAudio.play();
   setTimeout(function(){ alertPopup.style.visibility= "hidden" }, 2200);
 }
 function alertBigOnSmall(){
   alertPopup.textContent = "YOU CAN'T STACK BIG DONUT ON SMALLER DONUT";
   alertPopup.style.visibility = "visible";
-  slapAudio.play();
   setTimeout(function(){ alertPopup.style.visibility= "hidden" }, 2200);
 }
 
@@ -53,15 +51,17 @@ function Pole(id){
     var poleNumber = Number(this.id[this.id.length - 1]);
     if (fromPole === null){
       fromPole = poleNumber;
-      buttonAudio.play();
-
+      
     }
     else if(poles[poleNumber].isSmaller()) {
       poles[poleNumber].donuts.push(poles[fromPole].donuts[poles[fromPole].donuts.length-1]);
       var parentEl = document.getElementById('post'+ poles[poleNumber].id);
       var child = document.getElementsByClassName('donut' + poles[fromPole].donuts[poles[fromPole].donuts.length-1].size)[0];
       moves++;
+<<<<<<< HEAD
       buttonOffAudio.play();
+=======
+>>>>>>> 0b620b0f8a59c2d6654ba3e1a1fd0f14d33a099c
       parentEl.appendChild(child);
       poles[fromPole].donuts.pop();
       fromPole = null;
@@ -87,7 +87,15 @@ function LeaderBoard() {
     leaders.board.sort(function(a, b) {
       return a.moves - b.moves;
     });
-
+    // for(var i = 0; i < leaders.board.length; i++) {
+    //   if(leaders.board[i].name === userName) {
+    //     console.log(leaders.board[i].name);
+    //     console.log(userName);
+    //     if(leaders.board[i].moves > moves) {
+    //       leaders.board.splice(i,1);
+    //     }
+    //   }
+    // }
     console.log(leaders);
 
     leaders.pushToLocal();
@@ -111,7 +119,7 @@ function Leader(name, moves) {
 
 // checks to see if we have a winner
 function isAWinner() {
-  if(poles[1].donuts.length === 4 || poles[2].donuts.length === 4) {
+  if(poles[1].donuts.length === 3 || poles[2].donuts.length === 3) {
     winnerWinner();
   }
 }
@@ -125,14 +133,12 @@ function reset() {
   for (var i = 0; i < poles.length; i++) {
     poles[i].donuts = [];
   }
-  pole0.donuts.push(new Donut(4));
   pole0.donuts.push(new Donut(3));
   pole0.donuts.push(new Donut(2));
   pole0.donuts.push(new Donut(1));
   moves = 0;
   fromPole = null;
   // write the code for 3 different children and 3 different parent.
-  post0El.appendChild(donut4);
   post0El.appendChild(donut3);
   post0El.appendChild(donut2);
   post0El.appendChild(donut1);
@@ -149,7 +155,6 @@ function render() {
 // instantiate a new pole1
 var pole0 = new Pole(0);
 //populate the pole with 3 donuts at the beginning of page.
-pole0.donuts.push(new Donut(4));
 pole0.donuts.push(new Donut(3));
 pole0.donuts.push(new Donut(2));
 pole0.donuts.push(new Donut(1));
@@ -159,6 +164,7 @@ var pole1 = new Pole(1);
 var pole2 = new Pole(2);
 var poles = [pole0,pole1,pole2];
 
+<<<<<<< HEAD
 // creating sounds
 var buttonAudio = new Audio('sound/button.m4a');
 var buttonOffAudio = new Audio('sound/buttonoff.m4a');
@@ -166,6 +172,9 @@ var slapAudio = new Audio('sound/slap.m4a');
 slapAudio.volume = 0.35;
 
 
+=======
+// add pole event listeners
+>>>>>>> 0b620b0f8a59c2d6654ba3e1a1fd0f14d33a099c
 
 if(document.getElementById('post0')) {
   document.getElementById('post0').addEventListener('click', poles[0].move);
@@ -200,10 +209,13 @@ render();
 if(document.getElementById('post0')) {
   var post0El = document.getElementById('post0');
 
+<<<<<<< HEAD
   var donut4 = document.createElement('div');
   donut4.classList.add('donut4');
   post0El.appendChild(donut4);
 
+=======
+>>>>>>> 0b620b0f8a59c2d6654ba3e1a1fd0f14d33a099c
   var donut3 = document.createElement('div');
   donut3.classList.add('donut3');
   post0El.appendChild(donut3);

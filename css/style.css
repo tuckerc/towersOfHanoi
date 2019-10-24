@@ -151,35 +151,40 @@ div {
   box-shadow: inset 1vh 1vh 3vh #744f00;
 }
 
-.donut4{
-  content:url('img/donutFour.png');
-  position: absolute;
-  right:-8.05vw;
-  width:19.0vw;
-  height:15.7vh;
-}
-
 .donut3{
-  content:url('img/donutThree.png');
+  background-color:red;
   position: absolute;
-  right:-6.04vw;
-  width:15.2vw;
-  height:11.6vh;
-}
+  text-align: center;
+  right:-6.4vw;
+  width:16vw;
+  height:8vh;
+  border-radius: 50%;
+  line-height:4vh;
+  box-shadow: inset 0 0 3vh #390000;
 
+}
 .donut2{
-  content:url('/img/donutTwo.png');
+  background-color:purple;
   position: absolute;
-  right:-5.19vw;
-  width:13.5vw;
-  height:11.7vh;
+  right:-4.3vw;
+  width:12vw;
+  height:6vh;
+  border-radius: 50%;
+  line-height:3vh;
+  box-shadow: inset 0 0 2vh #1d0016;
+
 }
 
 .donut1 {
-  content:url('img/DonutOne.png');
+  background-color: rgb(13, 82, 30);
   position: absolute;
-  right:-3.4vw;
-  width:9.7vw;
+  right:-2.5vw;
+  width:8vw;
+  height:5vh;
+  border-radius: 50%;
+  line-height:2.5vh;
+  box-shadow: inset 0 0 1.6vh #011000;
+
 }
 
 #post0 div:nth-child(1){
@@ -189,15 +194,11 @@ div {
 
 #post0 div:nth-child(2){
     position: absolute;
-    bottom:6.8vh;
+    bottom:5vh;
 }
 #post0 div:nth-child(3){
   position: absolute;
-  bottom:12.5vh;
-}
-#post0 div:nth-child(4){
-  position: absolute;
-  bottom: 17.5vh;
+  bottom:9vh;
 }
   
 #post1 div:nth-child(1){
@@ -207,15 +208,11 @@ div {
 
 #post1 div:nth-child(2){
     position: absolute;
-    bottom:6.8vh;
+    bottom:5vh;
 }
 #post1 div:nth-child(3){
   position: absolute;
-  bottom:12.5vh;
-}
-#post1 div:nth-child(4){
-  position: absolute;
-  bottom: 17.5vh;
+  bottom:9vh;
 }
 
 #post2 div:nth-child(1){
@@ -225,15 +222,11 @@ div {
 
 #post2 div:nth-child(2){
     position: absolute;
-    bottom:6.8vh;
+    bottom:5vh;
 }
 #post2 div:nth-child(3){
   position: absolute;
-  bottom:12.5vh;
-}
-#post2 div:nth-child(4){
-  position: absolute;
-  bottom: 17.5vh;
+  bottom:9vh;
 }
   
 #scoreBoard {
@@ -329,3 +322,15 @@ div {
   visibility: hidden;
 }
 
+/* #alertBigOnSmall {
+  height:3em;
+  width:15em;
+  color:red;
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-top:0.7em;
+  visibility: visible;
+  z-index: 99999;
+  position:fixed;
+
+} */
