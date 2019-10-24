@@ -79,7 +79,7 @@ main{
   margin-bottom: 1em;
   padding-bottom: 0.5em;  
   width: 75vw;
-  height: 60vh;
+  height: 63.5vh;
   position: relative;
   /* height: auto; */
   overflow: hidden;
@@ -89,12 +89,12 @@ main{
 #moves {
   position:absolute;
   width:auto;
-  left: 0.5em;
-  line-height: 65px;
-  height:65px;
+  left: 1.2vw;
+  line-height: 8vh;
+  height:2vh;
   text-align: center;
   font-family: 'Boogaloo', cursive;
-  font-size: 2em;
+  font-size: 2vw;
   color: #21647a;
 }
 
