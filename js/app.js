@@ -173,7 +173,7 @@ var poles = [pole0,pole1,pole2];
 
 // creating sounds
 var buttonAudio = new Audio('sound/button.m4a');
-var buttonOffAudio = new Audio('sound/buttonoff.m4a');
+var buttonOffAudio = new Audio('sound/buttonOff.m4a');
 var slapAudio = new Audio('sound/slap.m4a');
 slapAudio.volume = 0.35;
 
@@ -213,8 +213,8 @@ var post0El = document.getElementById('post0');
 
 //making new donuts in HTML
 var donut5 = document.createElement('img');
-donut4.src = 'img/donutFive.png'
-donut4.classList.add('donut5');
+donut5.src = 'img/donutFive.png'
+donut5.classList.add('donut5');
 post0El.appendChild(donut5);
 
 var donut4 = document.createElement('img');
@@ -284,3 +284,5 @@ function subtractDonut() {
   donutCount--;
   reset();
 }
+
+document.getElementById('minus-btn').addEventListener('click',subtractDonut);
