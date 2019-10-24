@@ -197,11 +197,8 @@ if(document.getElementById('leaderBoard')) {
 
 render();
 
-<<<<<<< HEAD
-  var post0El = document.getElementById('post0');
-=======
+
 var post0El = document.getElementById('post0');
->>>>>>> 46ebd9eecf7dda400e43177637f452c199adc0b0
 
 var donut4 = document.createElement('img');
 donut4.src = 'img/donutFour.png'
@@ -214,12 +211,7 @@ donut3.classList.add('donut3');
 post0El.appendChild(donut3);
 
 
-<<<<<<< HEAD
-  var donut1 = document.createElement('img');
-  donut1.src = 'img/DonutOne.png'
-  donut1.classList.add('donut1');
-  post0El.appendChild(donut1);
-=======
+
 var donut2 = document.createElement('img')
 donut2.src = 'img/DonutTwo.png'
 donut2.classList.add('donut2');
@@ -229,7 +221,6 @@ var donut1 = document.createElement('img');
 donut1.src = 'img/DonutOne.png'
 donut1.classList.add('donut1');
 post0El.appendChild(donut1);
->>>>>>> 46ebd9eecf7dda400e43177637f452c199adc0b0
 
 
 var leaders = new LeaderBoard();
