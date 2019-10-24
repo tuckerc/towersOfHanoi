@@ -1,0 +1,25 @@
+th, tr, td{
+    border-bottom: 1px solid #3c70a4;
+    color: #3c70a4;
+}
+td{
+    width: 20vw;
+    font-size: 3vh;
+    line-height: 4vh;
+
+}
+#leaderBoard{
+    display: inline-block;
+    margin-top: 3vh;
+    background: radial-gradient(#d9eeec 10%, #64b2cd 10%, #eb9d28 50%);
+}
+th{
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bolder;
+    line-height: 4vh;
+}
+#hhead{
+    font-size: 5vh;
+    /* width: 40vw; */
+}

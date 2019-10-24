@@ -81,7 +81,6 @@ main{
   width: 75vw;
   height: 63.5vh;
   position: relative;
-  /* height: auto; */
   overflow: hidden;
   border: 0.2em solid #3c70a4;
 }
@@ -153,7 +152,7 @@ div {
 }
 
 .donut4{
-  content:url(/Users/Ran/code-fellows/201d53/towersOfHanoi/img/donutFour.png);
+  content:url('img/donutFour.png');
   position: absolute;
   right:-8.05vw;
   width:19.0vw;
@@ -161,7 +160,7 @@ div {
 }
 
 .donut3{
-  content:url(/Users/Ran/code-fellows/201d53/towersOfHanoi/img/donutThree.png);
+  content:url('img/donutThree.png');
   position: absolute;
   right:-6.04vw;
   width:15.2vw;
@@ -169,7 +168,7 @@ div {
 }
 
 .donut2{
-  content:url(/Users/Ran/code-fellows/201d53/towersOfHanoi/img/donutTwo.png);
+  content:url('/img/donutTwo.png');
   position: absolute;
   right:-5.19vw;
   width:13.5vw;
@@ -177,7 +176,7 @@ div {
 }
 
 .donut1 {
-  content:url(/Users/Ran/code-fellows/201d53/towersOfHanoi/img/DonutOne.png);
+  content:url('img/DonutOne.png');
   position: absolute;
   right:-3.4vw;
   width:9.7vw;
