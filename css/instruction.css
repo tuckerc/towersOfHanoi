@@ -5,6 +5,9 @@
     font-weight: bolder;
     font-size: 30px;
     text-transform: uppercase;
+    color: #004b96;
+   font-size: 1.7vw;
+   font-family: 'Boogaloo', cursive;
   }
   .h2Instruction{
     text-align: center;
@@ -12,7 +15,10 @@
     font-weight: bold;
     font-size: 20px;
     text-transform: uppercase;
-  }
+    color: #004b96;
+   font-size: 1.7vw;
+   font-family: 'Boogaloo', cursive;
+}
   .pInstruction{
       margin-left: 10%;
       margin-right: 10%;
@@ -28,7 +34,10 @@
     text-decoration-line: underline;
     font-weight: bold;
     font-size: 20px;
-    text-transform: capitalize
+    text-transform: capitalize;
+    color: #004b96;
+   font-size: 1.7vw;
+   font-family: 'Boogaloo', cursive;
   }
   ul li {
     margin-left: 10%;
@@ -43,4 +52,9 @@
  sup{
     vertical-align: super;
     font-size: smaller;
+ }
+ ul, li{
+  color: #004b96;
+  font-size: 1.7vw;
+  font-family: 'Boogaloo', cursive;
  }

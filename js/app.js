@@ -197,7 +197,7 @@ if(document.getElementById('post0')) {
   var donut1 = document.createElement('div');
   donut1.classList.add('donut1');
   post0El.appendChild(donut1);
-}
+
 
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();
