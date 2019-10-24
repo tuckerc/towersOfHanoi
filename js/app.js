@@ -193,30 +193,30 @@ if(document.getElementById('leaderBoard')) {
 
 render();
 
-// create 3 donuts if post0 exists
-if(document.getElementById('post0')) {
-  var post0El = document.getElementById('post0');
+var post0El = document.getElementById('post0');
 
-  var donut5 = document.createElement('div');
-  donut5.classList.add('donut5');
-  post0El.appendChild(donut5);
+//making new donuts in HTML
+var donut4 = document.createElement('img');
+donut4.src = 'img/donutFour.png'
+donut4.classList.add('donut4');
+post0El.appendChild(donut4);
 
-  var donut4 = document.createElement('div');
-  donut4.classList.add('donut4');
-  post0El.appendChild(donut4);
-  
-  var donut3 = document.createElement('div');
-  donut3.classList.add('donut3');
-  post0El.appendChild(donut3);
+var donut3 = document.createElement('img');
+donut3.src = 'img/donutThree.png'
+donut3.classList.add('donut3');
+post0El.appendChild(donut3);
 
-  var donut2 = document.createElement('div')
-  donut2.classList.add('donut2');
-  post0El.appendChild(donut2);
+var donut2 = document.createElement('img')
+donut2.src = 'img/DonutTwo.png'
+donut2.classList.add('donut2');
+post0El.appendChild(donut2);
 
-  var donut1 = document.createElement('div');
-  donut1.classList.add('donut1');
-  post0El.appendChild(donut1);
-}
+var donut1 = document.createElement('img');
+donut1.src = 'img/DonutOne.png'
+donut1.classList.add('donut1');
+post0El.appendChild(donut1);
+
+
 
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();

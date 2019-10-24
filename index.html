@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
     <title>Towers Of Hanoi</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -9,21 +8,23 @@
 
   </head>
 
+  
   <body>
     <div id="scoreBoard">
+      <div id="x">x</div>
       <h1 id="winner"></h1>
       <p id="pTag"></p>
-      <img src="img/chickenleft.png" alt="" width="200px" id="imgleft">
+      <img src="img/chickenleft.png" alt="" width="200px" id="imgleft"><img src="img/chicken.png" alt="" width="200px" id="imgright">
       <form>
         <input type="text" id="username" placeholder="ENTER NAME" maxlength="15">
+        <br>
         <input type='submit' id="submit" value='SUBMIT'></input>
       </form>
-      <img src="img/chicken.png" alt="" width="200px" id="imgright">
     </div>
     <div id="main-container">
       <header>
         <div id='leftLogo' class="logo">
-          <a href="index.html"><img src='img/logoNew1.PNG'></a>
+          <a href="index.html"><img src='logoNew1.PNG'></a>
         </div>
         <div id="nav">
           <h1>Towers of Hanoi</h1>
@@ -32,21 +33,20 @@
           <div id='leaderBoard' href='leaderboard.html'>Leader Board</div>
         </div>
         <div id='rightLogo' class='logo'>
-          <a href="index.html"><img src='img/logoNew2.PNG'></a>
+          <a href="index.html"><img src='logoNew2.PNG'></a>
         </div>
       </header>
 
+<<<<<<< HEAD
       <p>move the whole stack of donuts to another tower without stacking a larger donut on a smaller donut</p>
       <p>-- click one tower and then another to move a donut --</p>
 
+=======
+>>>>>>> 6569dce0d38c0144644b0e197f36f082b1862e2a
       <main>
         <div id="alertNoDonuts"></div>
         <div id="reset-btn">Reset</div>
-        <h2 id='minMoves'>Minimum Possible Moves:</h2>
-        <h2 id='changeLevel'>Change Level</h2>
-        <div id='minus-btn' class='donutAdjust'>-</div>
-        <div id='plus-btn' class='donutAdjust'>+</div>
-        <div id="moves">Moves: </div>
+        <div id="moves">Moves : </div>
         <div id='post0' class="towers"></div>            
         <div id='post1' class="towers"></div>
         <div id='post2'class="towers"></div>
