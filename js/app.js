@@ -87,15 +87,12 @@ function LeaderBoard() {
   };
   this.addLeader = function() {
     var userName = leaders.getName();
-    leaders.board.push(new Leader(userName, moves));
+    leaders.board.push(new Leader(userName, moves, donutCount));
     leaders.board.sort(function(a, b) {
       return a.moves - b.moves;
     });
 
-    console.log(leaders);
-
     leaders.pushToLocal();
-    console.log(localStorage.getItem('towersOfHanoi'));
   };
   this.pushToLocal = function() {
     localStorage.setItem('towersOfHanoi',JSON.stringify(leaders));
@@ -107,9 +104,10 @@ function LeaderBoard() {
   };
 }
 
-function Leader(name, moves) {
+function Leader(name, moves, donutCount) {
   this.name = name;
   this.moves = moves;
+  this.donutCount = donutCount;
 }
 
 
@@ -236,33 +234,35 @@ var post0El = document.getElementById('post0');
 var post1El = document.getElementById('post1');
 var post2El = document.getElementById('post2');
 
-//making new donuts in HTML
-var donut5 = document.createElement('img');
-donut5.src = 'img/donutFive.png'
-donut5.classList.add('donut5');
-post0El.appendChild(donut5);
+if(post0El){
+  //making new donuts in HTML
+  var donut5 = document.createElement('img');
+  donut5.src = 'img/donutFive.png'
+  donut5.classList.add('donut5');
+  post0El.appendChild(donut5);
 
-var donut4 = document.createElement('img');
-donut4.src = 'img/donutFour.png'
-donut4.classList.add('donut4');
-post0El.appendChild(donut4);
+  var donut4 = document.createElement('img');
+  donut4.src = 'img/donutFour.png'
+  donut4.classList.add('donut4');
+  post0El.appendChild(donut4);
 
-var donut3 = document.createElement('img');
-donut3.src = 'img/donutThree.png'
-donut3.classList.add('donut3');
-post0El.appendChild(donut3);
+  var donut3 = document.createElement('img');
+  donut3.src = 'img/donutThree.png'
+  donut3.classList.add('donut3');
+  post0El.appendChild(donut3);
 
-var donut2 = document.createElement('img')
-donut2.src = 'img/DonutTwo.png'
-donut2.classList.add('donut2');
-post0El.appendChild(donut2);
+  var donut2 = document.createElement('img')
+  donut2.src = 'img/DonutTwo.png'
+  donut2.classList.add('donut2');
+  post0El.appendChild(donut2);
 
-var donut1 = document.createElement('img');
-donut1.src = 'img/DonutOne.png'
-donut1.classList.add('donut1');
-post0El.appendChild(donut1);
+  var donut1 = document.createElement('img');
+  donut1.src = 'img/DonutOne.png'
+  donut1.classList.add('donut1');
+  post0El.appendChild(donut1);
 
-var donuts = [donut1, donut2, donut3, donut4, donut5];
+  var donuts = [donut1, donut2, donut3, donut4, donut5];
+}
 
 var leaders = new LeaderBoard();
 leaders.pullFromLocal();
@@ -289,8 +289,9 @@ function hideScoreBoard(){
 
 
 }
-document.getElementById("x").addEventListener('click',function(){hideScoreBoard()});
-
+if(document.getElementById("x")) {
+  document.getElementById("x").addEventListener('click',function(){hideScoreBoard()});
+}
 // function to update the minimum possible moves
 function updateMinMoves() {
   var movesElement = document.getElementById('minMoves');
@@ -309,7 +310,9 @@ function subtractDonut() {
   }
 }
 
-document.getElementById('minus-btn').addEventListener('click',subtractDonut);
+if(document.getElementById('minus-btn')) {
+  document.getElementById('minus-btn').addEventListener('click',subtractDonut);
+}
 
 function addDonut() {
   if(donutCount < 5) {
@@ -318,4 +321,6 @@ function addDonut() {
   }
 }
 
-document.getElementById('plus-btn').addEventListener('click',addDonut);
+if(document.getElementById('plus-btn')) {
+  document.getElementById('plus-btn').addEventListener('click',addDonut);
+}

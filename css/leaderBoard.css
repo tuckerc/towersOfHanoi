@@ -1,3 +1,7 @@
+table {
+    display: inline-block;
+}
+
 th, tr, td{
     border-bottom: 1px solid #3c70a4;
     color: #3c70a4;
@@ -5,12 +9,12 @@ th, tr, td{
     font-family: 'Boogaloo', cursive;
 }
 td{
-    width: 20vw;
+    width: 10vw;
     font-size: 3vh;
     line-height: 4vh;
 
 }
-#leaderBoard{
+#threeDonuts, #fourDonuts, #fiveDonuts{
     display: inline-block;
     margin-top: 3vh;
     background: linear-gradient(#d9eeec, #64b2cd, #eb9d28 );
@@ -21,7 +25,7 @@ th{
     font-weight: bolder;
     line-height: 4vh;
 }
-#hhead{
+.hhead{
     font-size: 5vh;
     /* width: 40vw; */
 }
