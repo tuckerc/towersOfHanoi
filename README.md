@@ -1,8 +1,8 @@
 # Towers Of Hanoi
 ## Code Fellows 201 Final Project
 
-Enter Website
-https://tuckerc.github.io/towersOfHanoi/
+## Enter Website
+## https://tuckerc.github.io/towersOfHanoi/
 
 <img src='towersOfHanoi.png' style='width: 80%'>
 
